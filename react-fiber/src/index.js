@@ -1,17 +1,24 @@
-import React from './code/react';
-import ReactDOM from './code/react-dom';
 
-const element = (
-  <div id="A">
-    A1111
-    <div id="B1">B1
-      <div id="C1">C1</div>
-      <div id="C2">C2</div>
-    </div>
-    <div id="B2">B2</div>
-  </div>
-)
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Counter from './counter';
+import { NoMode } from './ReactTypeOfMode';
+import { HostRoot } from './ReactWorkTags';
+// import React from './code/react';
+// import ReactDOM from './code/react-dom';
+
+// https://blog.csdn.net/zgaoq/article/details/125999758
+
+// ReactDOM.render(<Counter />, document.getElementById('root'));
+
+const counterInstance = new Counter();
+const mode = NoMode;
+
+const rootFiber = {
+  tag: HostRoot,
+  updateQueue: [],
+  mode,
+}
 
 
-ReactDOM.render(element, document.getElementById('root'));
-
+ReactDOM.createRoot(document.getElementById('root')).render(<Counter />)
