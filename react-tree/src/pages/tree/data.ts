@@ -47,8 +47,7 @@ export const dataConfig: TreeData = {
       name: '儿子2',
       key: '1-2',
       type: 'folder',
-      collapsed: true,
-      children: []
+      collapsed: true
     }
   ]
 }

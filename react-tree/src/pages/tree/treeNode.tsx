@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  LoadingOutlined,
   CaretDownOutlined,
   FileTextOutlined,
   CaretRightOutlined,
@@ -20,7 +21,7 @@ class TreeNode extends React.Component<Props> {
     super(props);
   }
   render() {
-    const { data: { name, children, key, collapsed, type, checked = false } } = this.props;
+    const { data: { name, children, key, collapsed, type, checked = false, loading } } = this.props;
     let caret: React.ReactNode = null;
     let icon: React.ReactNode = null;
 
@@ -52,7 +53,7 @@ class TreeNode extends React.Component<Props> {
       <div className="tree-node">
         <div className="inner">
           <span className="content">
-            {caret}
+            {loading ? <LoadingOutlined /> : caret}
             <input
               type="checkbox"
               checked={checked}
