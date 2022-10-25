@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/Ankera/mini_react/issues"
   },
-  "homepage": "https://github.com/Ankera/mini_react#readme"
+  "homepage": "https://github.com/Ankera/mini_react#readme",
+  "dependencies": {}
 }
