@@ -5,11 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Tree from './pages/tree';
-
-
-interface HomeProps {
-  title: string;
-}
+import From from './pages/form';
 
 const Layout: React.FC = () => {
   return (
@@ -17,20 +13,11 @@ const Layout: React.FC = () => {
   )
 }
 
-const Home: React.FC<HomeProps> = (props) => {
-  const { title } = props;
-  return (
-    <div>{title}</div>
-  )
-}
-
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Tree />}>
-          <Route index element={<Home title="Home - index" />} />
-        </Route>
+        <Route path="/" element={<From />} />
 
         <Route path="/tree" element={<Tree />} />
       </Routes>
