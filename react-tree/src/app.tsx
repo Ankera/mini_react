@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Tree from './pages/tree';
 import From from './pages/form';
+import Dragger from './pages/drag';
 
 const Layout: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<From />} />
+        <Route path="/" element={<Dragger />} />
 
         <Route path="/tree" element={<Tree />} />
       </Routes>
