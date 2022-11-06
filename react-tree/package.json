@@ -13,6 +13,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.23.6",
+    "keepalive-react-component": "^1.0.1",
     "koa": "^2.13.4",
     "koa-body": "^6.0.1",
     "koa-static": "^5.0.0",

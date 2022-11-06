@@ -9,7 +9,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    // publicPath: "/",
+    publicPath: "/",
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].bundle.js",
   },
@@ -18,6 +18,7 @@ module.exports = {
   devServer: {
     open: true,
     port: 8080,
+    historyApiFallback: true
   },
   resolve: {
     extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
