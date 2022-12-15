@@ -3,26 +3,58 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>download</title>
 </head>
 
 <body>
+  <video width="320" height="240" controls>
+    <source
+      src="https://yw-fed-static.oss-cn-hangzhou.aliyuncs.com/broadcast-video/test/d85fdc57-a2ea-44f7-ab2c-74fb33efaf00__@__demo223.mov"
+      type="video/mp4">
+    <source
+      src="https://yw-fed-static.oss-cn-hangzhou.aliyuncs.com/broadcast-video/test/d85fdc57-a2ea-44f7-ab2c-74fb33efaf00__@__demo223.mov"
+      type="video/ogg">
+    您的浏览器不支持 video 标签。
+  </video>
 
-</body>
-<script>
+  <button onclick="download()">下载</button>
+  <hr>
+  下载进度 <span id="progress"></span>
+  <hr>
+  <span id="success"></span>
+  <br>
+  <script>
+    var url = 'https://yw-fed-static.oss-cn-hangzhou.aliyuncs.com/broadcast-video/test/00a21fea-fb85-4c59-901a-30469b3a57d4__@__20.1.fiber.mp4'
+    var fileName = 'fiber.mp4';
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://yun.yuyayong.top/users.json');
+    function download () {
+      var xhr = new XMLHttpRequest()
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText);
+      xhr.onprogress = event => { // 下载进度事件
+        // loaded.innerText = event.loaded
+        // total.innerText = event.total
+
+        console.log(event.loaded / event.total)
+        progress.innerText = ((event.loaded / event.total) * 100).toFixed(2);
+      };
+
+      xhr.onload = event => {
+        if (xhr.readyState === 4 && xhr.status === 200) { // 下载完成之后
+          var blob = new Blob([xhr.response])
+          var link = document.createElement('a') // 创建a标签
+          link.href = URL.createObjectURL(blob)
+          link.download = fileName
+          link.click() // js点击完成最终本地保存
+          success.innerText = fileName + ' 下载完成'
+        }
+      }
+
+      xhr.open('GET', url)
+      xhr.send()
     }
-  }
 
-  xhr.send();
-</script>
+  </script>
+</body>
 
 </html>
