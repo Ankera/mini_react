@@ -1,8 +1,11 @@
 import { createHostRootFiber } from './ReactFiber';
 import { initialUpdateQueue } from './ReactFiberClassUpdateQueue';
 
-function FiberRootNode (containerInfo) {
-  this.containerInfo = containerInfo;
+// fiber 根节点，真实的 dom 节点
+class FiberRootNode {
+  constructor(containerInfo) {
+    this.containerInfo = containerInfo;
+  }
 }
 
 export function createFiberRoot (containerInfo) {

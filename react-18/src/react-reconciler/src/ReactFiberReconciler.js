@@ -1,9 +1,9 @@
 import { createFiberRoot } from './ReactFiberRoot';
 import { createUpdate, enqeueUpdate } from './ReactFiberClassUpdateQueue';
-import { scheduledUpdateOnFiber } from './ReactRiberWorkLoop';
+import { scheduledUpdateOnFiber } from './ReactFiberWorkLoop';
 
 /**
- * 创建容器
+ * 在跟节点上创建fiber容器
  * @param {*} containerInfo 
  * @returns 
  */

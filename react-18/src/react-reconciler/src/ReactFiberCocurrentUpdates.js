@@ -3,6 +3,7 @@ import { HostRoot } from './ReactWorkTags';
 /**
  * 此节点要处理更新优先级的问题
  * 1、向上找到根节点
+ * 2、
  * @param {*} sourceFiber 
  */
 export function makeUpdateLaneFromFiberToRoot (sourceFiber) {

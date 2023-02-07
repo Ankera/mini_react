@@ -1,5 +1,8 @@
-import logger from "shared/logger";
+import logger, { indent } from "shared/logger";
 import { HostRoot, HostComponent, HostText } from './ReactWorkTags';
+import { processUpdateQueue } from './ReactFiberClassUpdateQueue';
+import { mountChildFibers, reconcileChilFibers } from './ReactChildFiber';
+import { shouldSetTextContent } from 'react-dom-bindings/src/client/ReactDOMHostConfig';
 
 /**
  * 根据新的虚拟dom构建新的fiber子链表
@@ -7,7 +10,8 @@ import { HostRoot, HostComponent, HostText } from './ReactWorkTags';
  * @param {*} workInPropress 新fiber
  */
 export function beginWork (current, workInPropress) {
-  logger('beginWork', workInPropress);
+  logger((" ").repeat(indent.number) + 'beginWork', workInPropress);
+  indent.number += 2;
 
   switch (workInPropress.tag) {
     case HostRoot:
@@ -22,14 +26,39 @@ export function beginWork (current, workInPropress) {
 }
 
 function updateHostRoot (current, workInPropress) {
-  // processUpdateQueue(workInPropress);
+  processUpdateQueue(workInPropress);
 
   const nextState = workInPropress.memomizedState;
-  const nextChilren = workInPropress.element;
+  const nextChilren = nextState.element;
 
-  return null
+  reconcileChilren(current, workInPropress, nextChilren);
+  return workInPropress.child;
 }
 
 function updateHostComponent (current, workInPropress) {
+  const { type } = workInPropress;
+  const nextProps = workInPropress.pendingProps;
+  let nextChilren = nextProps.children;
 
+  const isDirectTextChild = shouldSetTextContent(type, nextProps);
+  if (isDirectTextChild) {
+    nextChilren = null;
+  }
+
+  reconcileChilren(current, workInPropress, nextChilren);
+  return workInPropress.child;
+}
+
+/**
+ * 根据新的虚拟DOM生成新的fiber
+ * @param {*} current 老的 fiber
+ * @param {*} workInPropress 新的 fiber
+ * @param {*} nextChilren 新的子虚拟 DOM
+ */
+function reconcileChilren (current, workInPropress, nextChilren) {
+  if (current === null) {
+    workInPropress.child = mountChildFibers(workInPropress, null, nextChilren);
+  } else {
+    workInPropress.child = reconcileChilFibers(workInPropress, current.child, nextChilren)
+  }
 }

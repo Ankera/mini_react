@@ -2,7 +2,7 @@ import * as ReactWorkTags from 'react-reconciler/src/ReactWorkTags';
 
 const ReactWorkTagsMap = new Map();
 
-for (const tag in ReactWorkTagsMap) {
+for (const tag in ReactWorkTags) {
   ReactWorkTagsMap.set(ReactWorkTags[tag], tag);
 }
 
@@ -16,5 +16,12 @@ export default function logger (prefix, workInProgress) {
     str += ` ${workInProgress.pendingProps}`;
   }
 
+  // console.log(str);
   return str;
 }
+
+let indent = {
+  number: 0
+}
+
+export { indent }

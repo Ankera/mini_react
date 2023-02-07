@@ -1,4 +1,4 @@
-import { HostRoot } from './ReactWorkTags';
+import { HostComponent, HostRoot, HostText, IndeterminateComponent } from './ReactWorkTags';
 import { NoFlags } from './ReactFiberFlags';
 
 /**
@@ -61,7 +61,7 @@ export function createWorkInProgress (current, pendingProps) {
     workInProgress.type = current.type;
     workInProgress.stateNode = current.stateNode;
     workInProgress.alternate = current;
-    current.alternate = workInProgress
+    current.alternate = workInProgress;
   } else {
     workInProgress.pendingProps = pendingProps;
     workInProgress.type = current.type;
@@ -77,4 +77,33 @@ export function createWorkInProgress (current, pendingProps) {
   workInProgress.index = current.index;
 
   return workInProgress;
+}
+
+/**
+ * 根据新的虚拟DOM，创建新的fiber节点
+ * @param {*} element 
+ */
+export function createFiberFromElement (element) {
+  const { type, key, props } = element;
+
+  return createFiberFromTypeAndProps(type, key, props);
+}
+
+function createFiberFromTypeAndProps (type, key, pendingProps) {
+  let tag = IndeterminateComponent;
+
+  // div, span, h1
+  if (typeof type === 'string') {
+    tag = HostComponent;
+  }
+
+  const fiber = createFiber(tag, pendingProps, key);
+  fiber.type = type;
+  return fiber;
+}
+
+export function createFiberFromText (content) {
+  const fiber = createFiber(HostText, content, null);
+
+  return fiber;
 }
