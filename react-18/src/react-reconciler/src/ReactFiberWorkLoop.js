@@ -2,8 +2,9 @@ import { scheduleCallback } from 'scheduler';
 import { createWorkInProgress } from './ReactFiber';
 import { beginWork } from './ReactFiberBeginWork';
 import { completeWork } from './ReactFiberCompleteWork';
-import { MutationMask, NoFlags } from './ReactFiberFlags';
+import { MutationMask, NoFlags, Placement, Update } from './ReactFiberFlags';
 import { commitMuationEffectsOnFiber } from './ReactFiberCommitWork';
+import { HostComponent, HostRoot, HostText } from './ReactWorkTags';
 
 let workInProgress = null;
 
@@ -100,6 +101,10 @@ function completeUnitOfWork (unitOfWork) {
  */
 function commitRoot (root) {
   const { finishedWork } = root;
+
+  // 打印完成工作的副作用
+  printFinishedWork(finishedWork);
+
   // 判断子树有没有副作用
   const subtreeFlags = (finishedWork.subtreeFlags & MutationMask) != NoFlags;
   const rootFlags = (finishedWork.flags & MutationMask) != NoFlags;
@@ -108,4 +113,40 @@ function commitRoot (root) {
   }
 
   root.current = finishedWork;
+}
+
+function printFinishedWork (fiber) {
+  if (fiber.flags !== NoFlags) {
+    // console.log('副作用标识=> ', getFlags(fiber.flags), getTag(fiber.tag), fiber.type, fiber.memomizedProps);
+  }
+
+  let child = fiber.child;
+  while (child) {
+    printFinishedWork(child);
+    child = child.sibling;
+  }
+}
+
+function getFlags (flags) {
+  if (flags === Placement) {
+    return '插入';
+  }
+  if (flags === Update) {
+    return '更新';
+  }
+
+  return flags;
+}
+
+function getTag (tag) {
+  switch (tag) {
+    case HostRoot:
+      return 'HostRoot';
+    case HostComponent:
+      return 'HostComponent';
+    case HostText:
+      return 'HostText';
+    default:
+      return tag;
+  }
 }

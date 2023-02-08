@@ -1,8 +1,10 @@
 import logger, { indent } from "shared/logger";
 import { HostRoot, HostComponent, HostText } from './ReactWorkTags';
+import { FunctionComponent, IndeterminateComponent } from './ReactWorkTags';
 import { processUpdateQueue } from './ReactFiberClassUpdateQueue';
 import { mountChildFibers, reconcileChilFibers } from './ReactChildFiber';
 import { shouldSetTextContent } from 'react-dom-bindings/src/client/ReactDOMHostConfig';
+import { renderWithHooks } from "./ReactFiberHooks";
 
 /**
  * 根据新的虚拟dom构建新的fiber子链表
@@ -20,6 +22,8 @@ export function beginWork (current, workInPropress) {
       return updateHostComponent(current, workInPropress);
     case HostText:
       return null;
+    case IndeterminateComponent:
+      return mountIndeterminateComponent(current, workInPropress, workInPropress.type);
     default:
       return null;
   }
@@ -61,4 +65,23 @@ function reconcileChilren (current, workInPropress, nextChilren) {
   } else {
     workInPropress.child = reconcileChilFibers(workInPropress, current.child, nextChilren)
   }
+}
+
+/**
+ * 挂载函数组件
+ * @param {*} current 老的 fiber
+ * @param {*} workInPropress 新的 fiber
+ * @param {*} Component 组件类型
+ */
+export function mountIndeterminateComponent (current, workInPropress, Component) {
+  const props = workInPropress.pendingProps;
+
+  // const value = Component(props);
+  const value = renderWithHooks(current, workInPropress, Component, props);
+
+  workInPropress.tag = FunctionComponent;
+
+  reconcileChilren(current, workInPropress, value);
+
+  return workInPropress.child;
 }

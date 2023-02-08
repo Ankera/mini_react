@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MessageChannel</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script>
+  // https://juejin.cn/post/7029715697173266469
+
+  const { port1, port2 } = new MessageChannel();
+
+  console.log(1)
+
+  // port1.onmessage = function (event) {
+  //   console.log('收到来自port2的消息：', event.data); // 收到来自port2的消息： pong
+  // };
+
+  const t1 = performance.now();
+  port2.onmessage = function (event) {
+    const t2 = performance.now();
+    console.log('time1', t2 - t1)
+    console.log('port2收到来自port1的消息：', event.data); // 收到来自port1的消息： ping
+    port2.postMessage('pong');
+  };
+
+  port1.postMessage('ping');
+
+
+  setTimeout(() => {
+    const t3 = performance.now();
+    console.log('time12', t3 - t1)
+  }, 0);
+
+
+</script>
+
+</html>

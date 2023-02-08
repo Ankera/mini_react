@@ -1,6 +1,6 @@
 import { appendChild, insertBefore } from "react-dom-bindings/src/client/ReactDOMHostConfig";
 import { Placement, MutationMask } from "./ReactFiberFlags";
-import { HostComponent, HostRoot, HostText } from "./ReactWorkTags";
+import { FunctionComponent, HostComponent, HostRoot, HostText } from "./ReactWorkTags";
 
 /**
  * 遍历fiber树，执行fiber上的副作用
@@ -10,6 +10,7 @@ import { HostComponent, HostRoot, HostText } from "./ReactWorkTags";
 export function commitMuationEffectsOnFiber (finishedWork, root) {
   switch (finishedWork.tag) {
     case HostRoot:
+    case FunctionComponent:
     case HostComponent:
     case HostText: {
       // 先遍历他们的子节点，处理他们子几点上的副作用
@@ -101,6 +102,7 @@ function getHostSibling (fiber) {
 /**
  * 
  * @param {*} node 将要插入的fiber节点
+ * @param {*} before 插入那个DOM前面
  * @param {*} parent 父真实DOM节点
  */
 function insertOrAppendPlacementNode (node, before, parent) {
@@ -116,10 +118,10 @@ function insertOrAppendPlacementNode (node, before, parent) {
   } else {
     const { child } = node;
     if (child !== null) {
-      insertOrAppendPlacementNode(child, parent);
+      insertOrAppendPlacementNode(child, before, parent);
       let { sibling } = child;
       while (sibling !== null) {
-        insertOrAppendPlacementNode(sibling, parent);
+        insertOrAppendPlacementNode(sibling, before, parent);
         sibling = sibling.sibling;
       }
     }
