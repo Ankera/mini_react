@@ -57,7 +57,7 @@ export function processUpdateQueue (workInPropress) {
     // 把更新链表剪开，变成一个单列表
     lastPendingUpdate.next = null;
 
-    let newState = workInPropress.memomizedState;
+    let newState = workInPropress.memoizedState;
     let update = firstPendingUpdate;
 
     while (update) {
@@ -65,7 +65,7 @@ export function processUpdateQueue (workInPropress) {
       update = update.next;
     }
 
-    workInPropress.memomizedState = newState;
+    workInPropress.memoizedState = newState;
   }
 }
 

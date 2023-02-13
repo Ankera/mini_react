@@ -16,14 +16,19 @@ export function beginWork (current, workInPropress) {
   indent.number += 2;
 
   switch (workInPropress.tag) {
+    case IndeterminateComponent:
+      return mountIndeterminateComponent(current, workInPropress, workInPropress.type);
+    case FunctionComponent: {
+      const Component = workInPropress.type;
+      const props = workInPropress.pendingProps;
+      return updateFunctionComponent(current, workInPropress, Component, props);
+    }
     case HostRoot:
       return updateHostRoot(current, workInPropress);
     case HostComponent:
       return updateHostComponent(current, workInPropress);
     case HostText:
       return null;
-    case IndeterminateComponent:
-      return mountIndeterminateComponent(current, workInPropress, workInPropress.type);
     default:
       return null;
   }
@@ -32,7 +37,7 @@ export function beginWork (current, workInPropress) {
 function updateHostRoot (current, workInPropress) {
   processUpdateQueue(workInPropress);
 
-  const nextState = workInPropress.memomizedState;
+  const nextState = workInPropress.memoizedState;
   const nextChilren = nextState.element;
 
   reconcileChilren(current, workInPropress, nextChilren);
@@ -82,6 +87,21 @@ export function mountIndeterminateComponent (current, workInPropress, Component)
   workInPropress.tag = FunctionComponent;
 
   reconcileChilren(current, workInPropress, value);
+
+  return workInPropress.child;
+}
+
+/**
+ * 
+ * @param {*} current 
+ * @param {*} workInPropress 
+ * @param {*} Component 
+ * @param {*} nextProps 
+ */
+export function updateFunctionComponent (current, workInPropress, Component, nextProps) {
+  const nextChildren = renderWithHooks(current, workInPropress, Component, nextProps);
+
+  reconcileChilren(current, workInPropress, nextChildren);
 
   return workInPropress.child;
 }

@@ -143,5 +143,7 @@ export function renderWithHooks (current, workInPropress, Component, props) {
 
   currentlyRenderingFiber = null;
 
+  currentHook = null;
+
   return children;
 }

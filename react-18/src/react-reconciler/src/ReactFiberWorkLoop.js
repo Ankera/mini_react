@@ -71,7 +71,7 @@ function performUnitOfWork (unitOfWork) {
 
   const next = beginWork(current, unitOfWork);
 
-  unitOfWork.memomizedProps = unitOfWork.pendingProps;
+  unitOfWork.memoizedProps = unitOfWork.pendingProps;
 
   // 如果没有子节点，表示当前 fiber 已经完成了
   if (next === null) {
@@ -112,6 +112,8 @@ function completeUnitOfWork (unitOfWork) {
 function commitRoot (root) {
   const { finishedWork } = root;
 
+  console.log('finishedWork', finishedWork)
+
   // 打印完成工作的副作用
   printFinishedWork(finishedWork);
 
@@ -127,7 +129,7 @@ function commitRoot (root) {
 
 function printFinishedWork (fiber) {
   if (fiber.flags !== NoFlags) {
-    // console.log('副作用标识=> ', getFlags(fiber.flags), getTag(fiber.tag), fiber.type, fiber.memomizedProps);
+    // console.log('副作用标识=> ', getFlags(fiber.flags), getTag(fiber.tag), fiber.type, fiber.memoizedProps);
   }
 
   let child = fiber.child;

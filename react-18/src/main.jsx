@@ -43,7 +43,7 @@ import { createRoot } from 'react-dom/client'
 
 const counter = (state, action) => {
   if (action.type === 'add') {
-    return state + action.payload;
+    return state + 1;
   }
   return state;
 }
@@ -55,15 +55,12 @@ function FunctionComponentReducer () {
 
   return (
     <button
-      id='button'
       onClick={() => {
         // debugger;
-        setNumber({ type: 'add', payload: 2 });
-        setNumber({ type: 'add', payload: 4 });
-        setNumber({ type: 'add', payload: 6 });
+        setNumber({ type: 'add' });
       }}
     >
-      加: {number}
+      {number}
     </button>
   )
 }

@@ -101,7 +101,7 @@ function createChildReconciler (shouldTrackSideEffects) {
   }
 
   function placeSingleChild (newFiber) {
-    if (shouldTrackSideEffects) {
+    if (shouldTrackSideEffects && newFiber.alternate === null) {
       newFiber.flags |= Placement;
     }
 

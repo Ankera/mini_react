@@ -5,7 +5,7 @@ import {
   createInstance,
   appendInitialChild,
   finalizeInitialChildren,
-  prepareUpdate
+  memoizedState
 } from 'react-dom-bindings/src/client/ReactDOMHostConfig';
 import { NoFlags, Update } from "./ReactFiberFlags";
 
@@ -68,7 +68,7 @@ export function completeWork (current, workInPropress) {
 function updateHostComponent (current, workInPropress, type, newProps) {
   const oldProps = current.memoizedProps;
   const instance = workInPropress.stateNode;
-  const updatePayload = prepareUpdate(instance, type, oldProps, newProps);
+  const updatePayload = memoizedState(instance, type, oldProps, newProps);
 
   workInPropress.updateQueue = updatePayload;
   if (updatePayload) {

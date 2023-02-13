@@ -20,14 +20,14 @@ export function FiberNode (tag, pendingProps, key) {
   this.sibling = null;  // 指向弟弟
 
   this.pendingProps = pendingProps;
-  this.memomizedProps = null; // 已经生效的属性
+  this.memoizedProps = null; // 已经生效的属性
 
   /**
    * 每个fiber都有自己的状态，每一种fiber状态存的状态是不一样的
    * * 类组件对应 fiber 存的的是类的实例
    * * HostRoot fiber 存的是要渲染的元素
    */
-  this.memomizedState = null;
+  this.memoizedState = null;
 
   // 可能要更新的队列
   this.updateQueue = null;
@@ -50,6 +50,11 @@ export function createHostRootFiber () {
 
 /**
  * 基于老的fiber和新的属性，创建新的fiber
+ * current 和 workInProgress 不是同一个对象
+ * 
+ * 所谓的复用
+ *    1、复用老的 fiber 对象
+ *    2、复用老的 DOM 
  * @param {*} current 
  * @param {*} pendingProps 新属性
  */
@@ -71,8 +76,8 @@ export function createWorkInProgress (current, pendingProps) {
 
   workInProgress.child = current.child;
   workInProgress.sibling = current.sibling;
-  workInProgress.memomizedProps = current.memomizedProps;
-  workInProgress.memomizedState = current.memomizedState;
+  workInProgress.memoizedProps = current.memoizedProps;
+  workInProgress.memoizedState = current.memoizedState;
   workInProgress.updateQueue = current.updateQueue;
   workInProgress.index = current.index;
 
