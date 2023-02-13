@@ -8,6 +8,7 @@ import getEventTarget from './getEventTarget';
 import { HostComponent } from 'react-reconciler/src/ReactWorkTags';
 import getListener from './getListener';
 
+// 注册简单事件
 SimpleEventPlugin.registerEvents();
 
 const listeningMarker = '_reactListening' + Math.random().toString(36).slice(2);
@@ -123,6 +124,14 @@ function exectueDispatch (event, listener, currentTarget) {
   listener(event);
 }
 
+/**
+ * 收集单个阶段事件，span -> h1 -> 捕获阶段/冒泡阶段
+ * @param {*} targetFiber 
+ * @param {*} reactName 
+ * @param {*} nativeEventType 
+ * @param {*} isCapturePhase 
+ * @returns 
+ */
 export function accumulateSinglePhaseListeners (targetFiber, reactName, nativeEventType, isCapturePhase) {
   const captureName = reactName + "Capture";
   const reactEventName = isCapturePhase ? captureName : reactName;

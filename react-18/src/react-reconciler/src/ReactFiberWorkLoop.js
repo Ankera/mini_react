@@ -5,8 +5,11 @@ import { completeWork } from './ReactFiberCompleteWork';
 import { MutationMask, NoFlags, Placement, Update } from './ReactFiberFlags';
 import { commitMuationEffectsOnFiber } from './ReactFiberCommitWork';
 import { HostComponent, HostRoot, HostText } from './ReactWorkTags';
+import { finishQueueingConcurrentUpdates } from './ReactFiberCocurrentUpdates';
 
 let workInProgress = null;
+
+let workInProgressRoot = null;
 
 /**
  * 计划更新root
@@ -23,6 +26,8 @@ export function scheduledUpdateOnFiber (root) {
  * @param {*} root 
  */
 function ensureRootInScheduled (root) {
+  if (workInProgressRoot) return;
+  workInProgressRoot = root;
   scheduleCallback(performConcurrentWorkOnRoot.bind(null, root));
 }
 
@@ -35,6 +40,8 @@ function performConcurrentWorkOnRoot (root) {
   root.finishedWork = finishedWork;
 
   commitRoot(root);
+
+  workInProgressRoot = null;
 }
 
 function renderRootSync (root) {
@@ -46,6 +53,9 @@ function renderRootSync (root) {
 
 function prepareFreshStack (root) {
   workInProgress = createWorkInProgress(root.current, null);
+
+  // hook 更新
+  finishQueueingConcurrentUpdates();
 }
 
 function workLoopSync () {

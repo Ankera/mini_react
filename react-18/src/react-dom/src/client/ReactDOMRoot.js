@@ -9,7 +9,7 @@ ReactDOMRoot.prototype.render = function (children) {
   const root = this._internalRoot;
 
   // 临时清空
-  root.containerInfo.innerHTML = ''
+  root.containerInfo.innerHTML = '';
 
   updateContainer(children, root);
 }

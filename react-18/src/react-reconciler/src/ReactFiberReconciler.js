@@ -8,7 +8,7 @@ import { scheduledUpdateOnFiber } from './ReactFiberWorkLoop';
  * @returns 
  */
 export function createContainer (containerInfo) {
-  return createFiberRoot(containerInfo)
+  return createFiberRoot(containerInfo);
 }
 
 /**

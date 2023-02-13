@@ -1,6 +1,6 @@
 import isArray from 'shared/isArray';
 import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols';
-import { createFiberFromElement, createFiberFromText } from './ReactFiber';
+import { createFiberFromElement, createFiberFromText, createWorkInProgress } from './ReactFiber';
 import { Placement } from './ReactFiberFlags';
 
 /**
@@ -63,7 +63,35 @@ function createChildReconciler (shouldTrackSideEffects) {
     return resultingFirstChild;
   }
 
+  function useFiber (fiber, newProps) {
+    const clone = createWorkInProgress(fiber, newProps);
+    clone.index = 0;
+    clone.sibling = null;
+    return clone;
+  }
+
+  /**
+   * 
+   * @param {*} returnFiber div#root
+   * @param {*} currentFirstFiber 老的 FunctionComponent 对应的 fiber
+   * @param {*} element 
+   * @returns 
+   */
   function reconcileSingleElement (returnFiber, currentFirstFiber, element) {
+    const key = element.key;
+    let child = currentFirstFiber;
+    while (child !== null) {
+      if (child.key === key) {
+        if (child.type === element.type) {
+          const existing = useFiber(child, element.props);
+          existing.return = returnFiber;
+          return existing;
+        }
+      }
+
+      child = child.sibling;
+    }
+
     // 根据新的虚拟DOM，创建新的fiber节点
     const created = createFiberFromElement(element);
 
