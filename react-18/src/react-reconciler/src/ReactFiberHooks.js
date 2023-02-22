@@ -13,10 +13,67 @@ let currentHook = null;
 
 const HooksDispatcherOnMount = {
   useReducer: mountReducer,
+  useState: mountState,
 }
 
 const HooksDispatcherOnUpdate = {
   useReducer: updateReducer,
+  useState: updateState,
+}
+
+function mountState (initalState) {
+  const hook = mountWorkInProgressHook();
+  hook.memoizedState = initalState;
+
+  const queue = {
+    pending: null,
+    dispatch: null,
+    // 上一个 reducer
+    lastRederedReducer: baseStateReducer,
+    // 上一个 state
+    lastRederedState: initalState
+  }
+
+  hook.queue = queue;
+  const dispatch = (queue.dispatch = dispatchSetState.bind(null, currentlyRenderingFiber, queue));
+
+  return [hook.memoizedState, dispatch];
+}
+
+/**
+ * 派发新状态
+ */
+function dispatchSetState (fiber, queue, action) {
+  const update = {
+    action,
+    next: null,
+    // 是否有急切的更新
+    hasEagerState: false,
+    // 急切的更新状态
+    eagerState: null,
+  }
+
+  // 当派发新动作后，我立刻用上一次的状态和上一次reducer计算新状态
+  const { lastRederedReducer, lastRederedState } = queue;
+  const eagerState = lastRederedReducer(lastRederedState, action);
+  update.hasEagerState = true;
+  update.eagerState = eagerState;
+
+  if (Object.is(eagerState, lastRederedState)) {
+    return;
+  }
+
+  const root = enqueueConcurrentHookUpdate(fiber, queue, update);
+
+  scheduledUpdateOnFiber(root);
+}
+
+function baseStateReducer (state, action) {
+  return typeof action === 'function' ? action(state) : action;
+}
+
+function updateState () {
+  return updateReducer(baseStateReducer);
 }
 
 function updateReducer (reducer) {
@@ -33,8 +90,12 @@ function updateReducer (reducer) {
     const firstUpdate = pendingQueue.next;
     let update = firstUpdate;
     do {
-      const action = update.action;
-      newState = reducer(newState, action);
+      if (update.hasEagerState) {
+        newState = update.eagerState;
+      } else {
+        const action = update.action;
+        newState = reducer(newState, action);
+      }
 
       update = update.next;
     } while (update !== null && update !== firstUpdate)
@@ -131,6 +192,7 @@ function mountWorkInProgressHook () {
  */
 export function renderWithHooks (current, workInPropress, Component, props) {
   currentlyRenderingFiber = workInPropress;
+
   if (current !== null && current.memoizedState !== null) {
     ReactCurrentDispatcher.current = HooksDispatcherOnUpdate;
   } else {

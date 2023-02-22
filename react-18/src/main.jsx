@@ -69,8 +69,26 @@ function FunctionComponentReducer () {
   )
 }
 
-const elementReducer = <FunctionComponentReducer />
+// ============================== useState ==============================
+function FunctionComponentState () {
+  console.log('Function')
+  const [number, setNumber] = React.useState(0);
+
+  return (
+    <button
+      onClick={() => {
+        setNumber(number);
+        setNumber(number + 1);
+        setNumber(number + 2);
+      }}
+    >
+      {number}
+    </button>
+  )
+}
+
+const element = <FunctionComponentState />
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(elementReducer);
+root.render(element);
