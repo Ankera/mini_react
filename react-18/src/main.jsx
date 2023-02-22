@@ -58,7 +58,7 @@ function FunctionComponentReducer () {
   return (
     <button
       onClick={() => {
-        // debugger;
+        debugger;
         setNumber({ type: 'add1' });
         // setNumber({ type: 'add2' });
         // setNumber({ type: 'add3' });

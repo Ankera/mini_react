@@ -34,6 +34,8 @@ export function makeUpdateLaneFromFiberToRoot (sourceFiber) {
  */
 export function enqueueConcurrentHookUpdate (fiber, queue, update) {
   enqueueUpdate(fiber, queue, update);
+
+  // 从当前节点一直找到根节点
   return getRootFiberUpdatedFiber(fiber);
 }
 

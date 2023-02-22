@@ -14,3 +14,9 @@ export function useReducer (reducer, initialArg) {
 
   return dispatcher.useReducer(reducer, initialArg);
 }
+
+export function useState (initialArg) {
+  const dispatcher = resolveDispatcher();
+
+  return dispatcher.useState(initialArg);
+}
