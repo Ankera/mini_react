@@ -20,6 +20,7 @@ const HooksDispatcherOnUpdate = {
 }
 
 function updateReducer (reducer) {
+  // 获取新的hook
   const hook = updateWorkInProgressHook();
 
   const queue = hook.queue;

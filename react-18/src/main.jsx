@@ -42,7 +42,7 @@ import { createRoot } from 'react-dom/client'
 
 
 const counter = (state, action) => {
-  if (action.type === 'add') {
+  if (['add1', 'add2', 'add3'].includes(action.type)) {
     return state + 1;
   }
   return state;
@@ -50,14 +50,18 @@ const counter = (state, action) => {
 
 function FunctionComponentReducer () {
 
-  // debugger;
-  const [number, setNumber] = React.useReducer(counter, 0);
+  const [number, setNumber] = React.useReducer(counter, 11);
+  const [number1, setNumber1] = React.useReducer(counter, 22);
+  const [number2, setNumber2] = React.useReducer(counter, 33);
+  const [number3, setNumber3] = React.useReducer(counter, 44);
 
   return (
     <button
       onClick={() => {
         // debugger;
-        setNumber({ type: 'add' });
+        setNumber({ type: 'add1' });
+        // setNumber({ type: 'add2' });
+        // setNumber({ type: 'add3' });
       }}
     >
       {number}

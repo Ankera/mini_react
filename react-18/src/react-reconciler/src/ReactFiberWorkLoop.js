@@ -28,9 +28,14 @@ export function scheduledUpdateOnFiber (root) {
 function ensureRootInScheduled (root) {
   if (workInProgressRoot) return;
   workInProgressRoot = root;
+
   scheduleCallback(performConcurrentWorkOnRoot.bind(null, root));
 }
 
+/**
+ * 异步的
+ * @param {*} root 
+ */
 function performConcurrentWorkOnRoot (root) {
   // 第一次渲染以同步的方式渲染根节点，初次渲染的时候，都是同步
   renderRootSync(root);
@@ -53,6 +58,7 @@ function renderRootSync (root) {
 
 function prepareFreshStack (root) {
   workInProgress = createWorkInProgress(root.current, null);
+
 
   // hook 更新
   finishQueueingConcurrentUpdates();

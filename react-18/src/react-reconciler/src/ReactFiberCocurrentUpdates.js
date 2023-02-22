@@ -1,3 +1,6 @@
+/**
+ * 并发更新
+ */
 import { HostRoot } from './ReactWorkTags';
 
 const concurrentQueue = [];

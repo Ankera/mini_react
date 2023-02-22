@@ -36,6 +36,7 @@ export function commitMuationEffectsOnFiber (finishedWork, root) {
           const oldProps = current !== null ? current.memoizedProps : newProps;
           const type = finishedWork.type;
           const updatePayload = finishedWork.updateQueue;
+          finishedWork.updateQueue = null;
           if (updatePayload) {
             commitUpdate(instance, updatePayload, type, oldProps, newProps, finishedWork);
           }
