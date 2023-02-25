@@ -71,7 +71,6 @@ function FunctionComponentReducer () {
 
 // ============================== useState ==============================
 function FunctionComponentState () {
-  console.log('Function')
   const [number, setNumber] = React.useState(0);
 
   return (
@@ -87,7 +86,154 @@ function FunctionComponentState () {
   )
 }
 
-const element = <FunctionComponentState />
+
+// ============================== useState, key 不同，type相同 ==============================
+function FunctionComponentState2 () {
+  const [number, setNumber] = React.useState(0);
+
+  return number === 0 ? (
+    <div
+      key="title1"
+      id="titlel1"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      title1
+    </div>
+  ) : (
+    <div
+      key="title2"
+      id="titlel2"
+      onClick={() => {
+        // setNumber(number + 1);
+      }}
+    >
+      title2
+    </div>
+  )
+}
+
+
+// ============================== useState, key 同，type不相同 ==============================
+function FunctionComponentState3 () {
+  const [number, setNumber] = React.useState(0);
+
+  return number === 0 ? (
+    <div
+      key="title1"
+      id="titlel1"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      title1
+    </div>
+  ) : (
+    <p
+      key="title1"
+      id="titlel2"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      title2
+    </p>
+  )
+}
+
+function FunctionComponentState4 () {
+  const [number, setNumber] = React.useState(0);
+
+  return number === 0 ? (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A" id="A">A</li>
+      <li key="B" id="B">B</li>
+      <li key="C" id="C">C</li>
+    </ul>
+  ) : (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A" id="A">A</li>
+    </ul>
+  )
+}
+
+
+// ============================== useState, 删除 ==============================
+function FunctionComponentState5 () {
+  const [number, setNumber] = React.useState(0);
+
+  return number === 0 ? (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A" id="A">A</li>
+      <li key="B" id="B">B</li>
+      <li key="C" id="C">C</li>
+    </ul>
+  ) : (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A" id="A2">A2</li>
+      <p key="B" id="B">B</p>
+      <li key="C" id="C2">C2</li>
+      <li key="D" id="D">D</li>
+    </ul>
+  )
+}
+
+function FunctionComponentState6 () {
+  const [number, setNumber] = React.useState(0);
+
+  return number === 0 ? (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A">A</li>
+      <li key="B" id="B">B</li>
+      <li key="C" >C</li>
+      <li key="D" >D</li>
+      <li key="E" >E</li>
+      <li key="F" id="F">F</li>
+    </ul>
+  ) : (
+    <ul
+      key="container"
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      <li key="A">A2</li>
+      <li key="C" >C2</li>
+      <li key="E" >E2</li>
+      <li key="B" id="B2">B2</li>
+      <li key="G" >G</li>
+      <li key="D" id="D">D2</li>
+    </ul>
+  )
+}
+
+const element = <FunctionComponentState6 />
 
 const root = createRoot(document.getElementById('root'));
 

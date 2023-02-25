@@ -11,10 +11,6 @@ const RESERVED_PORPS = {
   _source: true,
 }
 
-function hasValidKey (config) {
-  return config.key !== undefined;
-}
-
 function hasValidRef (config) {
   return config.ref !== undefined;
 }
@@ -29,7 +25,7 @@ function ReactElement (type, key, ref, props) {
   }
 }
 
-export function jsxDEV (type, config) {
+export function jsxDEV (type, config, maybeKey) {
   // debugger;
   // 属性名
   let propName;
@@ -37,8 +33,8 @@ export function jsxDEV (type, config) {
   let key = null;
   let ref = null;
 
-  if (hasValidKey(config)) {
-    key = config.key;
+  if (typeof maybeKey !== 'undefined') {
+    key = maybeKey;
   }
 
   if (hasValidRef(config)) {

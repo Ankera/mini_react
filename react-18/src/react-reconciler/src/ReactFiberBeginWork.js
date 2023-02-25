@@ -2,7 +2,7 @@ import logger, { indent } from "shared/logger";
 import { HostRoot, HostComponent, HostText } from './ReactWorkTags';
 import { FunctionComponent, IndeterminateComponent } from './ReactWorkTags';
 import { processUpdateQueue } from './ReactFiberClassUpdateQueue';
-import { mountChildFibers, reconcileChilFibers } from './ReactChildFiber';
+import { mountChildFibers, reconcileChildFibers } from './ReactChildFiber';
 import { shouldSetTextContent } from 'react-dom-bindings/src/client/ReactDOMHostConfig';
 import { renderWithHooks } from "./ReactFiberHooks";
 
@@ -68,7 +68,7 @@ function reconcileChilren (current, workInPropress, nextChilren) {
   if (current === null) {
     workInPropress.child = mountChildFibers(workInPropress, null, nextChilren);
   } else {
-    workInPropress.child = reconcileChilFibers(workInPropress, current.child, nextChilren)
+    workInPropress.child = reconcileChildFibers(workInPropress, current.child, nextChilren)
   }
 }
 

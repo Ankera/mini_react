@@ -38,6 +38,9 @@ export function FiberNode (tag, pendingProps, key) {
   this.subtreeFlags = NoFlags;
 
   this.alternate = null;
+
+  // 将要删除的fiber
+  this.deletions = null;
 }
 
 export function createFiber (tag, pendingProps, key) {

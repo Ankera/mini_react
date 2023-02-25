@@ -2,9 +2,9 @@ import { scheduleCallback } from 'scheduler';
 import { createWorkInProgress } from './ReactFiber';
 import { beginWork } from './ReactFiberBeginWork';
 import { completeWork } from './ReactFiberCompleteWork';
-import { MutationMask, NoFlags, Placement, Update } from './ReactFiberFlags';
+import { ChildDeletion, MutationMask, NoFlags, Placement, Update } from './ReactFiberFlags';
 import { commitMuationEffectsOnFiber } from './ReactFiberCommitWork';
-import { HostComponent, HostRoot, HostText } from './ReactWorkTags';
+import { FunctionComponent, HostComponent, HostRoot, HostText } from './ReactWorkTags';
 import { finishQueueingConcurrentUpdates } from './ReactFiberCocurrentUpdates';
 
 let workInProgress = null;
@@ -118,8 +118,6 @@ function completeUnitOfWork (unitOfWork) {
 function commitRoot (root) {
   const { finishedWork } = root;
 
-  console.log('finishedWork', finishedWork)
-
   // 打印完成工作的副作用
   printFinishedWork(finishedWork);
 
@@ -134,8 +132,11 @@ function commitRoot (root) {
 }
 
 function printFinishedWork (fiber) {
-  if (fiber.flags !== NoFlags) {
-    // console.log('副作用标识=> ', getFlags(fiber.flags), getTag(fiber.tag), fiber.type, fiber.memoizedProps);
+  // debugger
+  const { flags, deletions } = fiber;
+  if ((flags & ChildDeletion) !== NoFlags) {
+    fiber.flags &= (~ChildDeletion);
+    console.log('子节点删除' + (deletions.map((f) => `${f.type}#${f.memoizedProps.id}`).join(',')))
   }
 
   let child = fiber.child;
@@ -143,14 +144,22 @@ function printFinishedWork (fiber) {
     printFinishedWork(child);
     child = child.sibling;
   }
+
+  if (fiber.flags !== NoFlags) {
+    console.log(getFlags(fiber), getTag(fiber.tag), typeof fiber.type === 'function' ? fiber.type.name : fiber.type, fiber.memoizedProps);
+  }
 }
 
-function getFlags (flags) {
+function getFlags (fiber) {
+  const { flags, deletions } = fiber;
+  if (flags === (Placement | Update)) {
+    return '移动';
+  }
   if (flags === Placement) {
     return '插入';
   }
   if (flags === Update) {
-    return '更新';
+    return '更新'
   }
 
   return flags;
@@ -158,6 +167,8 @@ function getFlags (flags) {
 
 function getTag (tag) {
   switch (tag) {
+    case FunctionComponent:
+      return 'FunctionComponent';
     case HostRoot:
       return 'HostRoot';
     case HostComponent:
