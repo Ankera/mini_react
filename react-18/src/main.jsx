@@ -241,14 +241,14 @@ function FunctionComponentEffect () {
   React.useEffect(() => {
     console.log('number1', number);
     return () => {
-      console.log('number1 destory', number);
+      console.log('number1 destroy', number);
     }
   }, []);
 
   React.useEffect(() => {
     console.log('number2', number);
     return () => {
-      console.log('number2 destory', number);
+      console.log('number2 destroy', number);
     }
   }, [number]);
 

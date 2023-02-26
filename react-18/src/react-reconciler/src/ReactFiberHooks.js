@@ -49,14 +49,14 @@ function mountEffectImpl (fiberFlags, hookFlags, create, deps) {
  * 添加 effect 链表
  * @param {*} tag effect 标签
  * @param {*} create 创建方法
- * @param {*} destory 销毁方法
+ * @param {*} destroy 销毁方法
  * @param {*} deps 依赖数组
  */
-function pushEffect (tag, create, destory, deps) {
+function pushEffect (tag, create, destroy, deps) {
   const effect = {
     tag,
     create,
-    destory,
+    destroy,
     deps,
     next: null
   }
@@ -95,16 +95,16 @@ function updateEffect (create, deps) {
 function updateEffectImpl (fiberFlags, hookFlags, create, deps) {
   const hook = updateWorkInProgressHook();
   const nextDeps = deps === undefined ? null : deps;
-  let destory;
+  let destroy;
   if (currentHook !== null) {
     const prevEffect = currentHook.memoizedState;
-    destory = prevEffect.destory;
+    destroy = prevEffect.destroy;
     if (nextDeps !== null) {
       const prevDeps = prevEffect.deps;
       // 如果两个数组一样，停止执行
       if (areHookInputsEqual(nextDeps, prevDeps)) {
         // 不管要不要重新执行，都需要把新的 effect 组成完整的循环链表放入到 fiber.updateQueue 中
-        hook.memoizedState = pushEffect(hookFlags, create, destory, nextDeps);
+        hook.memoizedState = pushEffect(hookFlags, create, destroy, nextDeps);
         return;
       }
     }
@@ -112,7 +112,7 @@ function updateEffectImpl (fiberFlags, hookFlags, create, deps) {
 
   //  如果要执行,修改fiber flags
   currentlyRenderingFiber.flags |= fiberFlags;
-  hook.memoizedState = pushEffect(HookHasEffect | hookFlags, create, destory, nextDeps);
+  hook.memoizedState = pushEffect(HookHasEffect | hookFlags, create, destroy, nextDeps);
 }
 
 function areHookInputsEqual (nextDeps, prevDeps) {

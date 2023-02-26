@@ -278,9 +278,9 @@ function commitHookEffectListUnMount (flags, finishedWork) {
     let effect = firstEffect;
     do {
       if ((effect.tag & flags) === flags) {
-        const destory = effect.destory;
-        if (typeof destory !== 'undefined') {
-          destory();
+        const destroy = effect.destroy;
+        if (typeof destroy !== 'undefined') {
+          destroy();
         }
       }
       effect = effect.next;
@@ -335,7 +335,7 @@ function commitHookEffectListMount (flags, finishedWork) {
     do {
       if ((effect.tag & flags) === flags) {
         const create = effect.create;
-        effect.destory = create();
+        effect.destroy = create();
       }
       effect = effect.next;
     } while (effect !== firstEffect)
