@@ -1,7 +1,7 @@
 import { appendChild, insertBefore, commitUpdate, removeChild } from "react-dom-bindings/src/client/ReactDOMHostConfig";
-import { Placement, MutationMask, Update, Passive } from "./ReactFiberFlags";
+import { Placement, MutationMask, Update, Passive, LayoutMask } from "./ReactFiberFlags";
 import { FunctionComponent, HostComponent, HostRoot, HostText } from "./ReactWorkTags";
-import { HasEffect as HookHasEffect, Passive as HookPassive } from './ReactHooksEffectTags';
+import { HasEffect as HookHasEffect, Passive as HookPassive, Layout as HookLayout } from './ReactHooksEffectTags';
 
 let hostParent = null;
 
@@ -15,8 +15,18 @@ export function commitMuationEffectsOnFiber (finishedWork, root) {
   const flags = finishedWork.flags;
 
   switch (finishedWork.tag) {
+    case FunctionComponent: {
+      // 先遍历他们的子节点，处理他们子几点上的副作用
+      recursivelyTraverseMutationEffects(root, finishedWork);
+
+      // 再处理自己身上的副作用
+      commitReconciliationEffects(finishedWork);
+      if (flags & Update) {
+        commitHookEffectListUnMount(HookHasEffect | HookLayout, finishedWork);
+      }
+      break;
+    }
     case HostRoot:
-    case FunctionComponent:
     case HostText: {
       // 先遍历他们的子节点，处理他们子几点上的副作用
       recursivelyTraverseMutationEffects(root, finishedWork);
@@ -276,6 +286,7 @@ function commitHookEffectListUnMount (flags, finishedWork) {
   if (lastEffect !== null) {
     const firstEffect = lastEffect.next;
     let effect = firstEffect;
+    // debugger
     do {
       if ((effect.tag & flags) === flags) {
         const destroy = effect.destroy;
@@ -341,3 +352,43 @@ function commitHookEffectListMount (flags, finishedWork) {
     } while (effect !== firstEffect)
   }
 }
+
+
+// ================================== useLayouttEffect ===========================================
+
+export function commitLayoutEffects (finishedWork, root) {
+  const current = finishedWork.alternate;
+  commitLayoutEffectOnFiber(root, current, finishedWork);
+}
+
+function commitLayoutEffectOnFiber (finishedRoot, current, finishedWork) {
+  const flags = finishedWork.flags;
+  switch (finishedWork.tag) {
+    case HostRoot: {
+      recursivelyTraverseLayoutEffects(finishedRoot, finishedWork);
+      break;
+    }
+    case FunctionComponent: {
+      recursivelyTraverseLayoutEffects(finishedRoot, finishedWork);
+      if (flags & LayoutMask) {
+        commitHookLayoutEffects(finishedWork, HookHasEffect | HookLayout);
+      }
+      break;
+    }
+  }
+}
+
+function recursivelyTraverseLayoutEffects (root, parentFiber) {
+  if (parentFiber.subtreeFlags & LayoutMask) {
+    let child = parentFiber.child;
+    while (child !== null) {
+      const current = child.alternate;
+      commitLayoutEffectOnFiber(root, current, child);
+      child = child.sibling;
+    }
+  }
+}
+
+function commitHookLayoutEffects (finishedWork, hookFlags) {
+  commitHookEffectListMount(hookFlags, finishedWork);
+} 

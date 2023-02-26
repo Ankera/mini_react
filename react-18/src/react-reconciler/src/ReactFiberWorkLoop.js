@@ -6,7 +6,8 @@ import { ChildDeletion, MutationMask, NoFlags, Passive, Placement, Update } from
 import {
   commitMuationEffectsOnFiber, // 执行 DOM操作
   commitPassiveUnmountEffects, // 执行 destroy
-  commitPassiveMountEffects // 执行 create
+  commitPassiveMountEffects,// 执行 create
+  commitLayoutEffects,
 } from './ReactFiberCommitWork';
 import { FunctionComponent, HostComponent, HostRoot, HostText } from './ReactWorkTags';
 import { finishQueueingConcurrentUpdates } from './ReactFiberCocurrentUpdates';
@@ -122,6 +123,7 @@ function completeUnitOfWork (unitOfWork) {
 }
 
 function flushPassiveEffect () {
+  console.log('~~~~~~~~~~~~~~~~~下一个宏任务中~~~~~~~~~~~~~~~~~~~~');
   if (rootWithPendingPassiveEffect !== null) {
     const root = rootWithPendingPassiveEffect;
     // 执行卸载副作用 destroy
@@ -146,7 +148,7 @@ function commitRoot (root) {
     }
   }
 
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log('~~~~~~~~~~~~~~~~~开始commit~~~~~~~~~~~~~~~~~~~~');
   // 打印完成工作的副作用
   // printFinishedWork(finishedWork);
 
@@ -154,8 +156,13 @@ function commitRoot (root) {
   const subtreeFlags = (finishedWork.subtreeFlags & MutationMask) != NoFlags;
   const rootFlags = (finishedWork.flags & MutationMask) != NoFlags;
   if (subtreeFlags || rootFlags) {
+    console.log('~~~~~~~~~~~~~~~~~DOM执行变更~~~~~~~~~~~~~~~~~~~~');
     // 当 DOM 执行变更之后
     commitMuationEffectsOnFiber(finishedWork, root);
+
+    console.log('~~~~~~~~~~~~~~~~~DOM执行变更后~~~~~~~~~~~~~~~~~~~~');
+    // DOM变更之后，UI渲染之前
+    commitLayoutEffects(finishedWork, root);
 
     if (rootDoesHavePassiveEffect) {
       rootDoesHavePassiveEffect = false;

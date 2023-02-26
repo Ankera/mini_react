@@ -239,18 +239,33 @@ function FunctionComponentEffect () {
   const [number, setNumber] = React.useState(0);
 
   React.useEffect(() => {
-    console.log('number1', number);
+    console.log('useEffect 1', number);
     return () => {
-      console.log('number1 destroy', number);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    console.log('number2', number);
-    return () => {
-      console.log('number2 destroy', number);
+      console.log('useEffect 1 destroy', number);
     }
   }, [number]);
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect 2', number);
+    return () => {
+      console.log('useLayoutEffect  2 destroy', number);
+    }
+  }, [number]);
+
+  React.useEffect(() => {
+    console.log('useEffect 3', number);
+    return () => {
+      console.log('useEffect 3 destroy', number);
+    }
+  }, [number]);
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect 4', number);
+    return () => {
+      console.log('useLayoutEffect 4 destroy', number);
+    }
+  }, [number]);
+
 
   return (
     <button
