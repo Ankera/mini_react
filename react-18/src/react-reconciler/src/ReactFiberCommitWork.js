@@ -1,6 +1,7 @@
 import { appendChild, insertBefore, commitUpdate, removeChild } from "react-dom-bindings/src/client/ReactDOMHostConfig";
-import { Placement, MutationMask, Update } from "./ReactFiberFlags";
+import { Placement, MutationMask, Update, Passive } from "./ReactFiberFlags";
 import { FunctionComponent, HostComponent, HostRoot, HostText } from "./ReactWorkTags";
+import { HasEffect as HookHasEffect, Passive as HookPassive } from './ReactHooksEffectTags';
 
 let hostParent = null;
 
@@ -229,4 +230,114 @@ function getHostParentFiber (fiber) {
 
 function isHostParent (fiber) {
   return fiber.tag === HostRoot || fiber.tag === HostComponent;
+}
+
+
+// ================================== unMount ===========================================
+
+export function commitPassiveUnmountEffects (finishedWork) {
+  commitPassiveUnmountOnFiber(finishedWork);
+}
+
+function commitPassiveUnmountOnFiber (finishedWork) {
+  const flags = finishedWork.flags;
+  switch (finishedWork.tag) {
+    case HostRoot: {
+      recursivelyTraversePassiveUnMountEffects(finishedWork);
+      break;
+    }
+    case FunctionComponent: {
+      recursivelyTraversePassiveUnMountEffects(finishedWork);
+      if (flags & Passive) {
+        commitHookPassiveUnMountEffects(finishedWork, HookPassive | HookHasEffect);
+      }
+      break;
+    }
+  }
+}
+
+function recursivelyTraversePassiveUnMountEffects (parentFiber) {
+  if (parentFiber.subtreeFlags & Passive) {
+    let child = parentFiber.child;
+    while (child !== null) {
+      commitPassiveUnmountOnFiber(child);
+      child = child.sibling;
+    }
+  }
+}
+
+function commitHookPassiveUnMountEffects (finishedWork, hookFlags) {
+  commitHookEffectListUnMount(hookFlags, finishedWork);
+}
+
+function commitHookEffectListUnMount (flags, finishedWork) {
+  const updateQueue = finishedWork.updateQueue;
+  const lastEffect = updateQueue !== null ? updateQueue.lastEffect : null;
+  if (lastEffect !== null) {
+    const firstEffect = lastEffect.next;
+    let effect = firstEffect;
+    do {
+      if ((effect.tag & flags) === flags) {
+        const destory = effect.destory;
+        if (typeof destory !== 'undefined') {
+          destory();
+        }
+      }
+      effect = effect.next;
+    } while (effect !== firstEffect)
+  }
+}
+
+
+// ================================== mount ===========================================
+
+export function commitPassiveMountEffects (root, finishedWork) {
+  commitPassiveMountOnFiber(root, finishedWork);
+}
+
+function commitPassiveMountOnFiber (finishedRoot, finishedWork) {
+  const flags = finishedWork.flags;
+  switch (finishedWork.tag) {
+    case HostRoot: {
+      recursivelyTraversePassiveMountEffects(finishedRoot, finishedWork);
+      break;
+    }
+    case FunctionComponent: {
+      recursivelyTraversePassiveMountEffects(finishedRoot, finishedWork);
+      if (flags & Passive) {
+        commitHookPassiveMountEffects(finishedWork, HookPassive | HookHasEffect);
+      }
+      break;
+    }
+  }
+}
+
+function recursivelyTraversePassiveMountEffects (root, parentFiber) {
+  if (parentFiber.subtreeFlags & Passive) {
+    let child = parentFiber.child;
+    while (child !== null) {
+      commitPassiveMountOnFiber(root, child);
+      child = child.sibling;
+    }
+  }
+}
+
+function commitHookPassiveMountEffects (finishedWork, hookFlags) {
+  commitHookEffectListMount(hookFlags, finishedWork);
+}
+
+function commitHookEffectListMount (flags, finishedWork) {
+  const updateQueue = finishedWork.updateQueue;
+  const lastEffect = updateQueue !== null ? updateQueue.lastEffect : null;
+  if (lastEffect !== null) {
+    const firstEffect = lastEffect.next;
+    let effect = firstEffect;
+    do {
+      if ((effect.tag & flags) === flags) {
+        const create = effect.create;
+        effect.destory = create();
+      }
+      effect = effect.next;
+    } while (effect !== firstEffect)
+  }
 }

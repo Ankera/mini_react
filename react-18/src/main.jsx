@@ -233,7 +233,37 @@ function FunctionComponentState6 () {
   )
 }
 
-const element = <FunctionComponentState6 />
+// ============================== useEffect ==============================
+function FunctionComponentEffect () {
+
+  const [number, setNumber] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log('number1', number);
+    return () => {
+      console.log('number1 destory', number);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    console.log('number2', number);
+    return () => {
+      console.log('number2 destory', number);
+    }
+  }, [number]);
+
+  return (
+    <button
+      onClick={() => {
+        setNumber(number + 1);
+      }}
+    >
+      {number}
+    </button>
+  )
+}
+
+const element = <FunctionComponentEffect />
 
 const root = createRoot(document.getElementById('root'));
 

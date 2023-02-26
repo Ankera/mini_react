@@ -20,3 +20,9 @@ export function useState (initialArg) {
 
   return dispatcher.useState(initialArg);
 }
+
+export function useEffect (create, deps) {
+  const dispatcher = resolveDispatcher();
+
+  return dispatcher.useEffect(create, deps);
+}

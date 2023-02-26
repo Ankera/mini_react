@@ -2,14 +2,24 @@ import { scheduleCallback } from 'scheduler';
 import { createWorkInProgress } from './ReactFiber';
 import { beginWork } from './ReactFiberBeginWork';
 import { completeWork } from './ReactFiberCompleteWork';
-import { ChildDeletion, MutationMask, NoFlags, Placement, Update } from './ReactFiberFlags';
-import { commitMuationEffectsOnFiber } from './ReactFiberCommitWork';
+import { ChildDeletion, MutationMask, NoFlags, Passive, Placement, Update } from './ReactFiberFlags';
+import {
+  commitMuationEffectsOnFiber, // 执行 DOM操作
+  commitPassiveUnmountEffects, // 执行 destroy
+  commitPassiveMountEffects // 执行 create
+} from './ReactFiberCommitWork';
 import { FunctionComponent, HostComponent, HostRoot, HostText } from './ReactWorkTags';
 import { finishQueueingConcurrentUpdates } from './ReactFiberCocurrentUpdates';
 
 let workInProgress = null;
 
 let workInProgressRoot = null;
+
+// 此根节点上有没有 useEffect 类似的副作用
+let rootDoesHavePassiveEffect = false;
+
+// 具有 useEffect 副作用的根节点，FiberRootNode， 根 fiber.stateNode
+let rootWithPendingPassiveEffect = null;
 
 /**
  * 计划更新root
@@ -111,21 +121,46 @@ function completeUnitOfWork (unitOfWork) {
   } while (completedWork !== null);
 }
 
+function flushPassiveEffect () {
+  if (rootWithPendingPassiveEffect !== null) {
+    const root = rootWithPendingPassiveEffect;
+    // 执行卸载副作用 destroy
+    commitPassiveUnmountEffects(root.current);
+
+    // 执行挂载副作用 create
+    commitPassiveMountEffects(root, root.current);
+  }
+}
+
 /**
  * 提交阶段
  * @param {*} root 
  */
 function commitRoot (root) {
+  // 先获取新构建好的 fiber 树的根节点
   const { finishedWork } = root;
+  if ((finishedWork.subtreeFlags & Passive) !== NoFlags || (finishedWork.flags & Passive) !== NoFlags) {
+    if (!rootDoesHavePassiveEffect) {
+      rootDoesHavePassiveEffect = true;
+      scheduleCallback(flushPassiveEffect.bind(null, root));
+    }
+  }
 
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   // 打印完成工作的副作用
-  printFinishedWork(finishedWork);
+  // printFinishedWork(finishedWork);
 
   // 判断子树有没有副作用
   const subtreeFlags = (finishedWork.subtreeFlags & MutationMask) != NoFlags;
   const rootFlags = (finishedWork.flags & MutationMask) != NoFlags;
   if (subtreeFlags || rootFlags) {
+    // 当 DOM 执行变更之后
     commitMuationEffectsOnFiber(finishedWork, root);
+
+    if (rootDoesHavePassiveEffect) {
+      rootDoesHavePassiveEffect = false;
+      rootWithPendingPassiveEffect = root;
+    }
   }
 
   root.current = finishedWork;
