@@ -1,4 +1,8 @@
-import { scheduleCallback } from 'scheduler';
+import {
+  scheduleCallback,
+  NormalPriority as NormalSchedulerPriority,
+  shouldYield
+} from 'scheduler';
 import { createWorkInProgress } from './ReactFiber';
 import { beginWork } from './ReactFiberBeginWork';
 import { completeWork } from './ReactFiberCompleteWork';
@@ -40,14 +44,14 @@ function ensureRootInScheduled (root) {
   if (workInProgressRoot) return;
   workInProgressRoot = root;
 
-  scheduleCallback(performConcurrentWorkOnRoot.bind(null, root));
+  scheduleCallback(NormalSchedulerPriority, performConcurrentWorkOnRoot.bind(null, root));
 }
 
 /**
  * 异步的
  * @param {*} root 
  */
-function performConcurrentWorkOnRoot (root) {
+function performConcurrentWorkOnRoot (root, didUserCallbackTimeout) {
   // 第一次渲染以同步的方式渲染根节点，初次渲染的时候，都是同步
   renderRootSync(root);
 
@@ -73,6 +77,13 @@ function prepareFreshStack (root) {
 
   // hook 更新
   finishQueueingConcurrentUpdates();
+}
+
+function workLoopConcurrent () {
+  // 如果下一个要构建 fiber 并且时间片没有过期
+  while (workInProgress !== null && !shouldYield()) {
+    performUnitOfWork(workInProgress)
+  }
 }
 
 function workLoopSync () {
@@ -144,7 +155,7 @@ function commitRoot (root) {
   if ((finishedWork.subtreeFlags & Passive) !== NoFlags || (finishedWork.flags & Passive) !== NoFlags) {
     if (!rootDoesHavePassiveEffect) {
       rootDoesHavePassiveEffect = true;
-      scheduleCallback(flushPassiveEffect.bind(null, root));
+      scheduleCallback(NormalSchedulerPriority, flushPassiveEffect.bind(null, root));
     }
   }
 
