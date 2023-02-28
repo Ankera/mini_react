@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const WebpackBar = require('webpackbar')
+const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
 
 /**
  * 汇总
@@ -26,7 +29,7 @@ module.exports = {
     alias: {
       '@': path.join(__dirname, '../src')
     },
-    extensions: ['.ts', '.js', '.tsx'],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
     // modules: [path.resolve(__dirname, '../node_modules')],
   },
   cache: {
@@ -47,12 +50,11 @@ module.exports = {
                   "@babel/preset-env",
                   {
                     // 设置兼容目标浏览器版本,这里可以不写,babel-loader会自动寻找上面配置好的文件.browserslistrc
-                    // "targets": {
-                    //  "chrome": 35,
-                    //  "ie": 9
-                    // },
-                    "useBuiltIns": "usage", // 根据配置的浏览器兼容,以及代码中使用到的api进行引入polyfill按需添加
-                    "corejs": 3, // 配置使用core-js低版本
+                   // 设置兼容目标浏览器版本,也可以在根目录配置.browserslistrc文件,babel-loader会自动寻找上面配置好的文件.browserslistrc
+                   targets: { browsers: ["> 1%", "last 2 versions", "not ie <= 8"] },
+                   useBuiltIns: "usage", // 根据配置的浏览器兼容,以及代码中使用到的api进行引入polyfill按需添加
+                   corejs: 3, // 配置使用core-js使用的版本
+                   loose: true,
                   }
                 ],
                 '@babel/preset-react',
@@ -127,9 +129,23 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
       inject: true, // 自动注入静态资源
+      minify: {
+        collapseWhitespace: true, //去空格
+        removeComments: true, // 去注释
+      },
     }),
+
+
+    new WebpackBar({
+      color: "#85d",  // 默认green，进度条颜色支持HEX
+      basic: true,   // 默认true，启用一个简单的日志报告器
+      profile:false,  // 默认false，启用探查器。
+    }),
+    new ProgressBarWebpackPlugin(),
   ]
 }

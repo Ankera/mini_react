@@ -13,7 +13,8 @@ module.exports = merge(baseConfig, {
     historyApiFallback: true, // 解决history路由404问题
     static: {
       directory: path.join(__dirname, "../public"), //托管静态资源public文件夹
-    }
+    },
+    headers: { "Access-Control-Allow-Origin": "*" },
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // 添加热更新插件
