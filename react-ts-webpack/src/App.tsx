@@ -1,15 +1,20 @@
-import React from 'react'
-import Decor from "./decor";
-import { getCurrentTime } from "@/utils/date";
-import './App.less'
+import React from 'react';
+import { Routes, Route, Link, Router, useRoutes } from 'react-router-dom';
+import routes from './router'
+
+const GobalRoutes = () => useRoutes(routes);
 
 function App() {
   return (
     <div>
-      <h1>{getCurrentTime()}</h1>
-      <h2>Hello world === {process.env.NODE_ENV}</h2>
+      <h1>路由系统</h1>
+      <div>
+        <Link to="/">首页</Link>
+        <Link to="/profile">个人中心</Link>
+        <Link to="/user">用户</Link>
+      </div>
 
-      <Decor/>
+      <GobalRoutes />
     </div>
   )
 }
