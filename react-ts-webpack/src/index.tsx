@@ -1,14 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter, BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const root = document.getElementById('root');
 
 if (root) {
-  createRoot(root).render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  )
+  createRoot(root).render(<App />)
 }

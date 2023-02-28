@@ -6,11 +6,10 @@ const User: React.FC = () => {
   const params = useParams();
   return (
     <div>
-      <h1>用户集散地</h1>
       <NavLink to="/user/add" style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}>
         添加用户
       </NavLink>
-      <NavLink to="/user/list" style={({ isActive }) => ({ color: isActive ? "#642112" : "#180fff" })}>
+      <NavLink to="/user/list" style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}>
         用户列表
       </NavLink>
       <button
