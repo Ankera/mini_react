@@ -1,39 +1,30 @@
 import React from 'react';
-import { Routes, Route, Link, Router, useRoutes, BrowserRouter } from 'react-router-dom';
-import routes from './router';
-import './App.less';
-import {
-  BrowerRouter as BrowerRouter2,
-  Routes as Routes2,
-  Route as Route2,
-} from './react-router-dom';
+import { BrowserRouter, Routes, Route, useRoutes  } from "react-router-dom";
+import Layout from "./layout";
+import routes from './routes';
 
-const GobalRoutes = () => useRoutes(routes);
+const GlobalRoutes = () => useRoutes(routes)
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1>官方路由</h1>
-      <BrowserRouter>
-        <div>
-          <Link to="/">首页</Link>
-          <Link to="/profile">个人中心</Link>
-          <Link to="/user/add">用户</Link>
-        </div>
+    <BrowserRouter>
 
-        <GobalRoutes />
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div>hello</div>} />
+        <Route path="/world" element={<div>world</div>} />
+      </Routes>
 
+      <Routes>
+        <Route path="/2" element={<div>222</div>} />
+        <Route path="/3" element={<div>333</div>} />
+      </Routes>
 
-      <hr />
-      <h1>自己路由</h1>
-      <BrowerRouter2>
-        <Routes2>
-          <Route2 path="/hello" element={(<div>hello</div>)} />
-          <Route2 path="/world" element={(<div>world</div>)} />
-        </Routes2>
-      </BrowerRouter2>
-    </div>
+      {/* <Layout routes={routes} /> */}
+
+      
+
+      {/* <GlobalRoutes /> */}
+    </BrowserRouter>
   )
 }
 
