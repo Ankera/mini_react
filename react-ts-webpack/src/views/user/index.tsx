@@ -17,6 +17,8 @@ const User: React.FC = () => {
           navigate('/?type=1', { replace: true });
         }}
       >首页</button>
+
+
       <Outlet />
     </div>
   )

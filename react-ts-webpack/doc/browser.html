@@ -31,6 +31,7 @@
   ((history) => {
     const oldPushState = history.pushState;
     history.pushState = function () {
+      debugger
       oldPushState.apply(history, arguments);
       if (typeof window.onpushstate === 'function') {
         window.onpushstate();
