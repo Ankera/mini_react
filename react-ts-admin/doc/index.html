@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let arr = [
+      {
+        type: 'data',
+        name: 'd1.json',
+      },
+      {
+        type: 'folder',
+        name: 'sub1',
+        dataset: [
+          {
+            type: 'data',
+            name: 'd1.text',
+          },
+          {
+            type: 'folder',
+            name: '1111',
+            dataset: [
+              {
+                type: 'data',
+                name: 'a.text',
+              },
+              {
+                type: 'folder',
+                name: 'test',
+                dataset: [
+                  {
+                    type: 'son',
+                    name: 'd1.json',
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      },
+    ]
+
+
+    function find (dataname, dataset) {
+      dataset.forEach((item, x) => {
+        let name = item.name;
+        if (item.name === dataname) {
+          dataset[x].isBol = true;
+        } else if (item.type === 'folder') {
+          find(dataname, item.dataset);
+        }
+      })
+    }
+
+    find('d1.json', arr);
+
+    const a = [];
+    function print (arrs, suffix) {
+      arrs.forEach((item) => {
+        if (item.isBol) {
+          a.push(`${item.type}: ${suffix}/${item.name}`);
+        }
+
+        if (item.type === 'folder') {
+          print(item.dataset, '/' + item.name)
+        }
+      })
+    }
+
+
+    print(arr, '');
+
+    console.log('a', a)
+  </script>
+</body>
+
+</html>
