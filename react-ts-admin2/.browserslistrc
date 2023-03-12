@@ -1,0 +1,13 @@
+
+# 注释是这样写的，以#号开头
+[production staging]
+> 1%
+ie 10
+
+[dev]
+last 50 version #最后的一个版本
+> 1%  #代表全球超过1%使用的浏览器
+IE 6
+not dead
+Firefox > 20
+since 2015 or last 2 years
