@@ -16,6 +16,7 @@ class Compiler {
       run: new SyncHook(),
       // 编译结束时触发
       done: new SyncHook(),
+      compilation: new SyncHook(['chunk', 'filename'])
     }
   }
 
@@ -54,8 +55,13 @@ class Compiler {
   compile = (onCompiled) => {
     // 每次开启一次新的编译，都会创建一个新的 Compilation 类的实例
     const compilation = new Compilation(this.options);
+
+    this.hooks.compilation.call(compilation)
+
     compilation.build(onCompiled);
   }
 }
 
 module.exports = Compiler;
+
+// 19 课时

@@ -4,6 +4,7 @@ const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const generator = require('@babel/generator').default;
 const types = require('@babel/types');
+const { SyncHook } = require('tapable');
 
 const baseDir = toUnixPath(process.cwd());
 
@@ -21,6 +22,9 @@ class Compilation {
     // 里面放置所有的代码块
     this.chunks = [];
     this.assets = [];
+    this.hooks = {
+      chunkAsset: new SyncHook(["chunk", "filename"])
+    };
   }
 
   build = (onCompiled) => {
@@ -54,6 +58,7 @@ class Compilation {
     // 9、再把每个 chunk 转换成一个单独的文件加入到输出列表
     this.chunks.forEach((chunk) => {
       const filename = this.options.output.filename.replace('[name]', chunk.name);
+      this.hooks.chunkAsset.call(chunk, filename);
       this.assets[filename] = getSource(chunk);
     })
 
