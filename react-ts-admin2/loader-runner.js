@@ -89,8 +89,8 @@ function runLoaders(options, finalCallback){
       loaderContext.remainingRequest,
       loaderContext.prevRequest,
       loaderContext.data
-    ], (err, returnArgs) => {
-      if(Array.isArray(returnArgs) && returnArgs.length > 0 && returnArgs.some(arg => arg)){
+    ], (err, ...returnArgs) => {
+      if(returnArgs.some(arg => arg !== undefined)){
         loaderContext.loaderIndex--;
         iterateNormalLoaders(processOptions, loaderContext, returnArgs, pitchingCallback) 
       } else {

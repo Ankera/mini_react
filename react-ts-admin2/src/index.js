@@ -1,5 +1,4 @@
+import './base.css'
 
-import { add } from 'lodash';
-
-console.log('test')
+const sum = (a,b) => a  + b;
 

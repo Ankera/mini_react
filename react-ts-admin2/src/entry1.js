@@ -1,4 +1,4 @@
-// const title = require('inline1-loader!inline2-loader!./title');
+const title = require('inline1-loader!inline2-loader!./title');
 
 // // console.log('entry1 = =12 ', title)
 

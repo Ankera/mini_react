@@ -57,7 +57,9 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         use: [
-          isProd ?  MiniCssExtractPlugin.loader : 'style-loader',  
+          // [style-loader, css-loader, postcss-loader, less-loader]
+          // isProd ?  MiniCssExtractPlugin.loader : 'style-loader',  
+          'style-loader',
           { 
             loader: "css-loader", 
             /** 
@@ -144,4 +146,13 @@ module.exports = {
   } 
 }
 
-console.log('=======', path.resolve(__dirname, 'public'))
+
+/**
+ 
+
+/Users/zimu/Documents/github/mini_react/react-ts-admin2/node_modules/.pnpm/css-loader@6.7.3_webpack@5.75.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!
+/Users/zimu/Documents/github/mini_react/react-ts-admin2/node_modules/.pnpm/postcss-loader@7.0.1_6jdsrmfenkuhhw3gx4zvjlznce/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!
+/Users/zimu/Documents/github/mini_react/react-ts-admin2/node_modules/.pnpm/less-loader@11.1.0_less@4.1.3+webpack@5.75.0/node_modules/less-loader/dist/cjs.js!
+/Users/zimu/Documents/github/mini_react/react-ts-admin2/src/base.css
+
+ */

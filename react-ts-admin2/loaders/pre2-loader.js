@@ -1,6 +1,7 @@
 
-function loader(source) {
+function loader(source, options) {
   console.log('pre2')
+  // console.log(this.getOptions())
   return source + '// pre2'
 }
 

@@ -21,12 +21,12 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          path.resolve(__dirname, 'loaders/style-loader.js')
-        ]
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     path.resolve(__dirname, 'loaders/style-loader.js')
+      //   ]
+      // },
       {
         test: /\.js$/,
         // enforce: 'normal', // 默认

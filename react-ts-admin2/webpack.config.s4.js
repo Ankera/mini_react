@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DonePlugin = require('./plugins/done-plugin');
 const AutoExternalPlugin = require('./plugins/auto-external-plugin');
+const wepback = require('webpack')
 
 module.exports = {
-  entry: './src/entry1.js',
+  entry: './src/entry4.js',
   mode: 'development',
   devtool: false,
   output: {
@@ -29,5 +30,9 @@ module.exports = {
     //     url: "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js"
     //   }
     // })
+
+    new wepback.DefinePlugin({
+      __WEBPACK__ENV: JSON.stringify('packages')
+    })
   ]
 }

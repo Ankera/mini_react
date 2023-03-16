@@ -1,5 +1,5 @@
-// const { runLoaders } =  require('loader-runner');
-const runLoaders = require('./loader-runner');
+const { runLoaders } =  require('loader-runner');
+// const runLoaders = require('./loader-runner');
 const path = require('path');
 const fs = require('fs');
 
