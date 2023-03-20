@@ -13,5 +13,27 @@
   <div id="c">hello</div>
   <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 </body>
+<div>
+  <!-- 
+
+    htmlWebpackPlugin 支持的ejs 参数
+
+    --  webpackConfig
+    --  htmlWebpackPlugin
+          -- tags 
+          -- options
+          -- files
+   -->
+  <% for (var key in webpackConfig) { %>
+    <%= key %> : <%= JSON.stringify(webpackConfig[key]) %>
+        <% } %>
+</div>
+<script>
+  <% if (1 < 2) { %> console.log('================================') <% } %>
+    
+    
+
+  <%= __WEBPACK__ENV %>
+</script>
 
 </html>

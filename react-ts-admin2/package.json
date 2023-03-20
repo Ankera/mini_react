@@ -11,7 +11,8 @@
     "dev2": "webpack --config=webpack.config.s2.js",
     "dev3": "webpack --config=webpack.config.s3.js",
     "dev4": "webpack --config=webpack.config.s4.js",
-    "dev5": "webpack --config=webpack.config.s5.js"
+    "dev5": "webpack --config=webpack.config.s5.js",
+    "dev6": "webpack --config=webpack.config.s6.js"
   },
   "keywords": [],
   "author": "",

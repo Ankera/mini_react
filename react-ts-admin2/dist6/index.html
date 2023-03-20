@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="c">hello</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</body>
+<div>
+  <!-- 
+
+    htmlWebpackPlugin 支持的ejs 参数
+
+    --  webpackConfig
+    --  htmlWebpackPlugin
+          -- tags 
+          -- options
+          -- files
+   -->
+
+  amd :
+
+  bail :
+
+  cache : {"type":"memory","maxGenerations":null,"cacheUnaffected":false}
+
+  context : "/Users/zimu/Documents/github/mini_react/react-ts-admin2"
+
+  dependencies :
+
+  devServer :
+
+  devtool : false
+
+  entry : {"main":{"import":["./src/entry6.js"]}}
+
+  experiments :
+  {"futureDefaults":false,"backCompat":true,"topLevelAwait":false,"syncWebAssembly":false,"asyncWebAssembly":false,"outputModule":false,"layers":false,"cacheUnaffected":false}
+
+  externals :
+
+  externalsPresets :
+  {"web":true,"node":false,"nwjs":false,"electron":false,"electronMain":false,"electronPreload":false,"electronRenderer":false}
+
+  externalsType : "var"
+
+  ignoreWarnings :
+
+  infrastructureLogging :
+  {"stream":{"connecting":false,"_hadError":false,"_parent":null,"_host":null,"_closeAfterHandlingError":false,"_readableState":{"objectMode":false,"highWaterMark":16384,"buffer":{"head":null,"tail":null,"length":0},"length":0,"pipes":[],"flowing":null,"ended":false,"endEmitted":false,"reading":false,"constructed":true,"sync":true,"needReadable":false,"emittedReadable":false,"readableListening":false,"resumeScheduled":false,"errorEmitted":false,"emitClose":false,"autoDestroy":true,"destroyed":false,"errored":null,"closed":false,"closeEmitted":false,"defaultEncoding":"utf8","awaitDrainWriters":null,"multiAwaitDrain":false,"readingMore":false,"dataEmitted":false,"decoder":null,"encoding":null,"readable":false},"_events":{},"_eventsCount":1,"_writableState":{"objectMode":false,"highWaterMark":16384,"finalCalled":false,"needDrain":false,"ending":false,"ended":false,"finished":false,"destroyed":false,"decodeStrings":false,"defaultEncoding":"utf8","length":0,"writing":false,"corked":0,"sync":true,"bufferProcessing":false,"writecb":null,"writelen":0,"afterWriteTickInfo":null,"buffered":[],"bufferedIndex":0,"allBuffers":true,"allNoop":true,"pendingcb":0,"constructed":true,"prefinished":false,"errorEmitted":false,"emitClose":false,"autoDestroy":true,"errored":null,"closed":false,"closeEmitted":false},"allowHalfOpen":false,"_sockname":null,"_pendingData":null,"_pendingEncoding":"","server":null,"_server":null,"columns":139,"rows":17,"_type":"tty","fd":2,"_isStdio":true},"level":"info","debug":false,"colors":true,"appendOnly":false}
+
+  loader : {"target":"web"}
+
+  mode : "development"
+
+  module :
+  {"parser":{"javascript":{"unknownContextRequest":".","unknownContextRegExp":false,"unknownContextRecursive":true,"unknownContextCritical":true,"exprContextRequest":".","exprContextRegExp":false,"exprContextRecursive":true,"exprContextCritical":true,"wrappedContextRegExp":{},"wrappedContextRecursive":true,"wrappedContextCritical":false,"strictThisContextOnImports":false,"importMeta":true,"dynamicImportMode":"lazy","dynamicImportPrefetch":false,"dynamicImportPreload":false,"createRequire":false},"asset":{"dataUrlCondition":{"maxSize":8096}}},"generator":{},"defaultRules":[{"mimetype":"application/node","type":"javascript/auto"},{"test":{},"type":"json"},{"mimetype":"application/json","type":"json"},{"test":{},"type":"javascript/esm","resolve":{"byDependency":{"esm":{"fullySpecified":true}}}},{"test":{},"descriptionData":{"type":"module"},"type":"javascript/esm","resolve":{"byDependency":{"esm":{"fullySpecified":true}}}},{"test":{},"type":"javascript/dynamic"},{"test":{},"descriptionData":{"type":"commonjs"},"type":"javascript/dynamic"},{"mimetype":{"or":["text/javascript","application/javascript"]},"type":"javascript/esm","resolve":{"byDependency":{"esm":{"fullySpecified":true}}}},{"dependency":"url","oneOf":[{"scheme":{},"type":"asset/inline"},{"type":"asset/resource"}]},{"assert":{"type":"json"},"type":"json"}],"rules":[{"test":{},"enforce":"pre","use":["/Users/zimu/Documents/github/mini_react/react-ts-admin2/webpack/loaders/logger1.js","/Users/zimu/Documents/github/mini_react/react-ts-admin2/webpack/loaders/logger3.js"]}]}
+
+  name :
+
+  node : {"global":true,"__filename":"mock","__dirname":"mock"}
+
+  optimization :
+  {"runtimeChunk":false,"splitChunks":{"defaultSizeTypes":["javascript","unknown"],"cacheGroups":{"default":{"idHint":"","reuseExistingChunk":true,"minChunks":2,"priority":-20},"defaultVendors":{"idHint":"vendors","reuseExistingChunk":true,"test":{},"priority":-10}},"hidePathInfo":false,"chunks":"async","usedExports":false,"minChunks":1,"minSize":10000,"minRemainingSize":0,"enforceSizeThreshold":30000,"maxAsyncRequests":null,"maxInitialRequests":null,"automaticNameDelimiter":"-"},"emitOnErrors":true,"removeAvailableModules":false,"removeEmptyChunks":true,"mergeDuplicateChunks":true,"flagIncludedChunks":false,"moduleIds":"named","chunkIds":"named","sideEffects":"flag","providedExports":true,"usedExports":false,"innerGraph":false,"mangleExports":false,"concatenateModules":false,"checkWasmTypes":false,"mangleWasmImports":false,"portableRecords":false,"realContentHash":false,"minimize":false,"minimizer":[{}],"nodeEnv":"development"}
+
+  output :
+  {"assetModuleFilename":"[hash][ext][query]","asyncChunks":true,"charset":true,"chunkFilename":"[name].js","chunkFormat":"array-push","chunkLoading":"jsonp","chunkLoadingGlobal":"webpackChunkreact_ts_admin2","chunkLoadTimeout":120000,"cssFilename":"[name].css","cssChunkFilename":"[name].css","compareBeforeEmit":true,"crossOriginLoading":false,"devtoolNamespace":"react-ts-admin2","environment":{"arrowFunction":false,"const":false,"destructuring":false,"forOf":false,"bigIntLiteral":false,"dynamicImport":false,"module":false},"enabledChunkLoadingTypes":["jsonp","import-scripts"],"enabledLibraryTypes":[],"enabledWasmLoadingTypes":["fetch"],"filename":"[name].js","globalObject":"self","hashDigest":"hex","hashDigestLength":20,"hashFunction":"md4","hotUpdateChunkFilename":"[id].[fullhash].hot-update.js","hotUpdateGlobal":"webpackHotUpdatereact_ts_admin2","hotUpdateMainFilename":"[runtime].[fullhash].hot-update.json","iife":true,"importFunctionName":"import","importMetaName":"import.meta","scriptType":false,"module":false,"path":"/Users/zimu/Documents/github/mini_react/react-ts-admin2/dist6","pathinfo":true,"publicPath":"auto","sourceMapFilename":"[file].map[query]","strictModuleExceptionHandling":false,"uniqueName":"react-ts-admin2","wasmLoading":"fetch","webassemblyModuleFilename":"[hash].module.wasm","workerChunkLoading":"import-scripts","workerWasmLoading":"fetch"}
+
+  parallelism : 100
+
+  performance : false
+
+  plugins :
+  [{"options":{"configPath":"/Users/zimu/Documents/github/mini_react/react-ts-admin2/webpack.config.s6.js","helpfulOutput":true},"logger":{}},{},{},{"definitions":{"__WEBPACK__ENV":"\"xyz\""}},{"userOptions":{"template":"/Users/zimu/Documents/github/mini_react/react-ts-admin2/src/index.html"},"version":5,"options":{"template":"/Users/zimu/Documents/github/mini_react/react-ts-admin2/src/index.html","templateContent":false,"filename":"index.html","publicPath":"auto","hash":false,"inject":"head","scriptLoading":"defer","compile":true,"favicon":false,"minify":"auto","cache":true,"showErrors":true,"chunks":"all","excludeChunks":[],"chunksSortMode":"auto","meta":{},"base":false,"title":"Webpack
+  App","xhtml":false}}]
+
+  profile : false
+
+  recordsInputPath : false
+
+  recordsOutputPath : false
+
+  resolve :
+  {"byDependency":{"wasm":{"conditionNames":["import","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"esm":{"conditionNames":["import","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"loaderImport":{"conditionNames":["import","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"worker":{"conditionNames":["import","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."],"preferRelative":true},"commonjs":{"conditionNames":["require","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"amd":{"conditionNames":["require","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"loader":{"conditionNames":["require","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"unknown":{"conditionNames":["require","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"undefined":{"conditionNames":["require","module","..."],"aliasFields":["browser"],"mainFields":["browser","module","..."]},"url":{"preferRelative":true}},"cache":true,"modules":["node_modules"],"conditionNames":["webpack","development","browser"],"mainFiles":["index"],"extensions":[".js",".jsx",".ts",".tsx",".json"],"aliasFields":[],"exportsFields":["exports"],"roots":["/Users/zimu/Documents/github/mini_react/react-ts-admin2"],"mainFields":["main"]}
+
+  resolveLoader :
+  {"cache":true,"conditionNames":["loader","require","node"],"exportsFields":["exports"],"mainFields":["loader","main"],"extensions":[".js"],"mainFiles":["index"]}
+
+  snapshot :
+  {"resolveBuildDependencies":{"timestamp":true,"hash":true},"buildDependencies":{"timestamp":true,"hash":true},"resolve":{"timestamp":true},"module":{"timestamp":true},"immutablePaths":[],"managedPaths":["/Users/zimu/Documents/github/mini_react/react-ts-admin2/node_modules/"]}
+
+  stats : {"preset":"normal","colors":true}
+
+  target : "browserslist"
+
+  watch : false
+
+  watchOptions : {}
+
+</div>
+<script>
+  console.log('================================')
+
+
+
+  xyz
+</script>
+
+</html>
