@@ -3,7 +3,7 @@ function loader(source) {
   return source + '// post2'
 }
 
-loader.pitch = function(){
+loader.pitch = function(a, b, c, d){
   console.log('post2 pitch')
 }
 
