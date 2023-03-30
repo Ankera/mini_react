@@ -1,13 +1,20 @@
-const webpack = require('./webpack');
-const options = require('./webpack.config.s2');
+const webpack = require('webpack')
+const options = require('./webpack.config.s2')
 
-
-const compiler = webpack(options);
+debugger
+const compiler = webpack(options)
+const fs = require('fs')
 
 compiler.run((err, stats) => {
-  stats.toJson({
-    modules: true,
-    chunks: true,
-    assets: true,
-  })
+  const data = JSON.stringify(
+    stats.toJson({
+      // modules: true,
+      chunks: true,
+      // assets: true,
+    }),
+    null,
+    2
+  )
+
+  fs.writeFileSync('./debugger.json', data)
 })

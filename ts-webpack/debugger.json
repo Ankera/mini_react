@@ -1,0 +1,1280 @@
+{
+  "hash": "498167bb0116e7e44adc",
+  "version": "5.75.0",
+  "time": 315913,
+  "builtAt": 1680168768159,
+  "publicPath": "auto",
+  "outputPath": "/Users/zimu/Documents/github/mini_react/ts-webpack/dist2",
+  "assetsByChunkName": {
+    "entry1": [
+      "entry1.js"
+    ],
+    "entry2": [
+      "entry2.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "entry1.js",
+      "size": 547929,
+      "emitted": false,
+      "comparedForEmit": true,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "size": 547929
+      },
+      "chunkNames": [
+        "entry1"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [
+        "entry1"
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "entry2.js",
+      "size": 1718,
+      "emitted": false,
+      "comparedForEmit": true,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "size": 1718
+      },
+      "chunkNames": [
+        "entry2"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [
+        "entry2"
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 545023,
+      "sizes": {
+        "javascript": 544674,
+        "runtime": 349
+      },
+      "names": [
+        "entry1"
+      ],
+      "idHints": [],
+      "runtime": [
+        "entry1"
+      ],
+      "files": [
+        "entry1.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "2dbb62751e17511f10a3",
+      "childrenByOrder": {},
+      "id": "entry1",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 544120,
+          "sizes": {
+            "javascript": 544120
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "name": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "index": 2,
+          "preOrderIndex": 2,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "issuerName": "./src/entry1.js",
+          "issuerPath": [
+            {
+              "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "name": "./src/entry1.js",
+              "id": "./src/entry1.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "issuerId": "./src/entry1.js",
+          "chunks": [
+            "entry1"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "439:50-57",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "439:62-78",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "439:82-89",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "module decorator",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "442:63-69",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "module decorator",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "442:74-80",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "module decorator",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "442:93-99",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "17209:7-11",
+              "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+              "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "module": "./src/entry1.js",
+              "moduleName": "./src/entry1.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "resolvedModule": "./src/entry1.js",
+              "type": "cjs require",
+              "active": true,
+              "explanation": "",
+              "userRequest": "lodash",
+              "loc": "6:10-27",
+              "moduleId": "./src/entry1.js",
+              "resolvedModuleId": "./src/entry1.js"
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: this is used directly at 17209:7-11",
+            "CommonJS bailout: exports is used directly at 439:50-57",
+            "CommonJS bailout: exports is used directly at 439:82-89"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 480,
+          "sizes": {
+            "javascript": 480
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "name": "./src/entry1.js",
+          "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 2,
+          "postOrderIndex": 2,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./src/entry1.js",
+          "issuerId": null,
+          "chunks": [
+            "entry1"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "module": "./src/entry1.js",
+              "moduleName": "./src/entry1.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "resolvedModule": "./src/entry1.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "19:0-14",
+              "moduleId": "./src/entry1.js",
+              "resolvedModuleId": "./src/entry1.js"
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./src/entry1.js",
+              "loc": "entry1",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 19:0-14"
+          ],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 74,
+          "sizes": {
+            "javascript": 74
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+          "name": "./src/title2.js",
+          "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+          "index": 1,
+          "preOrderIndex": 1,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "issuerName": "./src/entry1.js",
+          "issuerPath": [
+            {
+              "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "name": "./src/entry1.js",
+              "id": "./src/entry1.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./src/title2.js",
+          "issuerId": "./src/entry1.js",
+          "chunks": [
+            "entry1"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "module": "./src/entry1.js",
+              "moduleName": "./src/entry1.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+              "resolvedModule": "./src/entry1.js",
+              "type": "cjs require",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./title2",
+              "loc": "2:15-34",
+              "moduleId": "./src/entry1.js",
+              "resolvedModuleId": "./src/entry1.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+              "module": "./src/title2.js",
+              "moduleName": "./src/title2.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+              "resolvedModule": "./src/title2.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "3:0-14",
+              "moduleId": "./src/title2.js",
+              "resolvedModuleId": "./src/title2.js"
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 3:0-14"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 221,
+          "sizes": {
+            "runtime": 221
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/global",
+          "name": "webpack/runtime/global",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            "entry1"
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 128,
+          "sizes": {
+            "runtime": 128
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/node module decorator",
+          "name": "webpack/runtime/node module decorator",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            "entry1"
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        }
+      ],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "entry1",
+          "request": "./src/entry1.js"
+        }
+      ]
+    },
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 159,
+      "sizes": {
+        "javascript": 159
+      },
+      "names": [
+        "entry2"
+      ],
+      "idHints": [],
+      "runtime": [
+        "entry2"
+      ],
+      "files": [
+        "entry2.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "7a70adb1ed0a3b7eebb3",
+      "childrenByOrder": {},
+      "id": "entry2",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 85,
+          "sizes": {
+            "javascript": 85
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "name": "./src/entry2.js",
+          "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "index": 3,
+          "preOrderIndex": 3,
+          "index2": 4,
+          "postOrderIndex": 4,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./src/entry2.js",
+          "issuerId": null,
+          "chunks": [
+            "entry2"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./src/entry2.js",
+              "loc": "entry2",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 74,
+          "sizes": {
+            "javascript": 74
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+          "name": "./src/title.js",
+          "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+          "index": 4,
+          "preOrderIndex": 4,
+          "index2": 3,
+          "postOrderIndex": 3,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "issuerName": "./src/entry2.js",
+          "issuerPath": [
+            {
+              "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+              "name": "./src/entry2.js",
+              "id": "./src/entry2.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./src/title.js",
+          "issuerId": "./src/entry2.js",
+          "chunks": [
+            "entry2"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+              "module": "./src/entry2.js",
+              "moduleName": "./src/entry2.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+              "resolvedModule": "./src/entry2.js",
+              "type": "cjs require",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./title",
+              "loc": "1:14-32",
+              "moduleId": "./src/entry2.js",
+              "resolvedModuleId": "./src/entry2.js"
+            },
+            {
+              "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+              "module": "./src/title.js",
+              "moduleName": "./src/title.js",
+              "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+              "resolvedModule": "./src/title.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "3:0-14",
+              "moduleId": "./src/title.js",
+              "resolvedModuleId": "./src/title.js"
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 3:0-14"
+          ],
+          "depth": 1
+        }
+      ],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "entry2",
+          "request": "./src/entry2.js"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 480,
+      "sizes": {
+        "javascript": 480
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+      "name": "./src/entry1.js",
+      "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+      "index": 0,
+      "preOrderIndex": 0,
+      "index2": 2,
+      "postOrderIndex": 2,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./src/entry1.js",
+      "issuerId": null,
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "module": "./src/entry1.js",
+          "moduleName": "./src/entry1.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "resolvedModule": "./src/entry1.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "19:0-14",
+          "moduleId": "./src/entry1.js",
+          "resolvedModuleId": "./src/entry1.js"
+        },
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./src/entry1.js",
+          "loc": "entry1",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: module.exports is used directly at 19:0-14"
+      ],
+      "depth": 0
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 85,
+      "sizes": {
+        "javascript": 85
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+      "name": "./src/entry2.js",
+      "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+      "index": 3,
+      "preOrderIndex": 3,
+      "index2": 4,
+      "postOrderIndex": 4,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./src/entry2.js",
+      "issuerId": null,
+      "chunks": [
+        "entry2"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./src/entry2.js",
+          "loc": "entry2",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 74,
+      "sizes": {
+        "javascript": 74
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+      "name": "./src/title2.js",
+      "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+      "index": 1,
+      "preOrderIndex": 1,
+      "index2": 0,
+      "postOrderIndex": 0,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+      "issuerName": "./src/entry1.js",
+      "issuerPath": [
+        {
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "name": "./src/entry1.js",
+          "id": "./src/entry1.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./src/title2.js",
+      "issuerId": "./src/entry1.js",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "module": "./src/entry1.js",
+          "moduleName": "./src/entry1.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "resolvedModule": "./src/entry1.js",
+          "type": "cjs require",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./title2",
+          "loc": "2:15-34",
+          "moduleId": "./src/entry1.js",
+          "resolvedModuleId": "./src/entry1.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+          "module": "./src/title2.js",
+          "moduleName": "./src/title2.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title2.js",
+          "resolvedModule": "./src/title2.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "3:0-14",
+          "moduleId": "./src/title2.js",
+          "resolvedModuleId": "./src/title2.js"
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: module.exports is used directly at 3:0-14"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 544120,
+      "sizes": {
+        "javascript": 544120
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+      "name": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+      "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+      "index": 2,
+      "preOrderIndex": 2,
+      "index2": 1,
+      "postOrderIndex": 1,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+      "issuerName": "./src/entry1.js",
+      "issuerPath": [
+        {
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "name": "./src/entry1.js",
+          "id": "./src/entry1.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+      "issuerId": "./src/entry1.js",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "439:50-57",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "439:62-78",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "439:82-89",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "442:63-69",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "442:74-80",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "module decorator",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "442:93-99",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "module": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "moduleName": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModule": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "17209:7-11",
+          "moduleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js",
+          "resolvedModuleId": "./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "module": "./src/entry1.js",
+          "moduleName": "./src/entry1.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+          "resolvedModule": "./src/entry1.js",
+          "type": "cjs require",
+          "active": true,
+          "explanation": "",
+          "userRequest": "lodash",
+          "loc": "6:10-27",
+          "moduleId": "./src/entry1.js",
+          "resolvedModuleId": "./src/entry1.js"
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: this is used directly at 17209:7-11",
+        "CommonJS bailout: exports is used directly at 439:50-57",
+        "CommonJS bailout: exports is used directly at 439:82-89"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 74,
+      "sizes": {
+        "javascript": 74
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+      "name": "./src/title.js",
+      "nameForCondition": "/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+      "index": 4,
+      "preOrderIndex": 4,
+      "index2": 3,
+      "postOrderIndex": 3,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+      "issuerName": "./src/entry2.js",
+      "issuerPath": [
+        {
+          "identifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "name": "./src/entry2.js",
+          "id": "./src/entry2.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./src/title.js",
+      "issuerId": "./src/entry2.js",
+      "chunks": [
+        "entry2"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "module": "./src/entry2.js",
+          "moduleName": "./src/entry2.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry2.js",
+          "resolvedModule": "./src/entry2.js",
+          "type": "cjs require",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./title",
+          "loc": "1:14-32",
+          "moduleId": "./src/entry2.js",
+          "resolvedModuleId": "./src/entry2.js"
+        },
+        {
+          "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+          "module": "./src/title.js",
+          "moduleName": "./src/title.js",
+          "resolvedModuleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/title.js",
+          "resolvedModule": "./src/title.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "3:0-14",
+          "moduleId": "./src/title.js",
+          "resolvedModuleId": "./src/title.js"
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: module.exports is used directly at 3:0-14"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "runtime",
+      "layer": null,
+      "size": 221,
+      "sizes": {
+        "runtime": 221
+      },
+      "built": false,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "webpack/runtime/global",
+      "name": "webpack/runtime/global",
+      "nameForCondition": null,
+      "index": null,
+      "preOrderIndex": null,
+      "index2": null,
+      "postOrderIndex": null,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [],
+      "reasons": [],
+      "usedExports": null,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": null
+    },
+    {
+      "type": "module",
+      "moduleType": "runtime",
+      "layer": null,
+      "size": 128,
+      "sizes": {
+        "runtime": 128
+      },
+      "built": false,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "webpack/runtime/node module decorator",
+      "name": "webpack/runtime/node module decorator",
+      "nameForCondition": null,
+      "index": null,
+      "preOrderIndex": null,
+      "index2": null,
+      "postOrderIndex": null,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [],
+      "reasons": [],
+      "usedExports": null,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": null
+    }
+  ],
+  "entrypoints": {
+    "entry1": {
+      "name": "entry1",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [
+        {
+          "name": "entry1.js",
+          "size": 547929
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 547929,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "entry2": {
+      "name": "entry2",
+      "chunks": [
+        "entry2"
+      ],
+      "assets": [
+        {
+          "name": "entry2.js",
+          "size": 1718
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1718,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "namedChunkGroups": {
+    "entry1": {
+      "name": "entry1",
+      "chunks": [
+        "entry1"
+      ],
+      "assets": [
+        {
+          "name": "entry1.js",
+          "size": 547929
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 547929,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "entry2": {
+      "name": "entry2",
+      "chunks": [
+        "entry2"
+      ],
+      "assets": [
+        {
+          "name": "entry2.js",
+          "size": 1718
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1718,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "errors": [
+    {
+      "moduleIdentifier": "/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger1.js!/Users/zimu/Documents/github/mini_react/ts-webpack/webpack/loaders/logger2.js!/Users/zimu/Documents/github/mini_react/ts-webpack/src/entry1.js",
+      "moduleName": "./src/entry1.js",
+      "loc": "1:14-62",
+      "message": "Module not found: Error: Can't resolve 'inline1-loader' in '/Users/zimu/Documents/github/mini_react/ts-webpack/src'",
+      "moduleId": "./src/entry1.js",
+      "moduleTrace": [],
+      "details": "resolve 'inline1-loader' in '/Users/zimu/Documents/github/mini_react/ts-webpack/src'\n  Parsed request is a module\n  using description file: /Users/zimu/Documents/github/mini_react/ts-webpack/package.json (relative path: ./src)\n    resolve as module\n      /Users/zimu/Documents/github/mini_react/ts-webpack/src/node_modules doesn't exist or is not a directory\n      looking for modules in /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules\n        single file module\n          using description file: /Users/zimu/Documents/github/mini_react/ts-webpack/package.json (relative path: ./node_modules/inline1-loader)\n            no extension\n              /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/inline1-loader doesn't exist\n            .js\n              /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/inline1-loader.js doesn't exist\n        /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/inline1-loader doesn't exist\n      /Users/zimu/Documents/github/mini_react/node_modules doesn't exist or is not a directory\n      /Users/zimu/Documents/github/node_modules doesn't exist or is not a directory\n      /Users/zimu/Documents/node_modules doesn't exist or is not a directory\n      /Users/zimu/node_modules doesn't exist or is not a directory\n      /Users/node_modules doesn't exist or is not a directory\n      /node_modules doesn't exist or is not a directory",
+      "stack": "ModuleNotFoundError: Module not found: Error: Can't resolve 'inline1-loader' in '/Users/zimu/Documents/github/mini_react/ts-webpack/src'\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/Compilation.js:2016:28\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/NormalModuleFactory.js:798:13\n    at eval (eval at create (/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/NormalModuleFactory.js:270:22\n    at eval (eval at create (/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/NormalModuleFactory.js:434:22\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/NormalModuleFactory.js:116:11\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/webpack@5.75.0_webpack-cli@4.10.0/node_modules/webpack/lib/NormalModuleFactory.js:635:23\n    at /Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/neo-async@2.6.2/node_modules/neo-async/async.js:2830:7\n    at done (/Users/zimu/Documents/github/mini_react/ts-webpack/node_modules/.pnpm/neo-async@2.6.2/node_modules/neo-async/async.js:2925:13)"
+    }
+  ],
+  "errorsCount": 1,
+  "warnings": [],
+  "warningsCount": 0,
+  "children": []
+}

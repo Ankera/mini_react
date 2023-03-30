@@ -1,4 +1,9 @@
-const title = require('inline1-loader!inline2-loader!./title');
+const title = require('inline1-loader!inline2-loader!./title')
+const title2 = require('./title2')
+
+console.log('title2', title2)
+
+const _ = require('lodash')
 
 // // console.log('entry1 = =12 ', title)
 
@@ -9,13 +14,13 @@ const title = require('inline1-loader!inline2-loader!./title');
 
 // import _ from 'lodash';
 
-// console.log('entry', _.add(1,2))
+console.log('entry', _.add(1, 2))
 
 module.exports = {
-  add(a,b) {
-    return a + b;
+  add(a, b) {
+    return a + b
   },
-  minus(a,b) {
-    return a - b;
-  }
+  minus(a, b) {
+    return a - b
+  },
 }
