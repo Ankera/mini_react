@@ -18,7 +18,6 @@ module.exports = "body {\n  background-color: red;\n  transition: all 0.3s;\n  d
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 
-
     var style = document.createElement('style');
 
     style.innerHTML = __webpack_require__(/*! !!../loaders/less-loader.js!./index.less */ "./loaders/less-loader.js!./src/index.less")

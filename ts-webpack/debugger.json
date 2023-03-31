@@ -1,8 +1,8 @@
 {
   "hash": "498167bb0116e7e44adc",
   "version": "5.75.0",
-  "time": 315913,
-  "builtAt": 1680168768159,
+  "time": 350,
+  "builtAt": 1680198149469,
   "publicPath": "auto",
   "outputPath": "/Users/zimu/Documents/github/mini_react/ts-webpack/dist2",
   "assetsByChunkName": {

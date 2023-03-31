@@ -1,13 +1,14 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ArchivePlugin = require('./plugins/archive-plugin.js')
 
 module.exports = {
-  entry: "./src/entry6.js",
+  entry: './src/entry6.js',
   mode: 'development',
   devtool: false,
   output: {
     path: path.resolve(__dirname, 'dist6'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   context: process.cwd().replace(/\\/g, '/'),
   // resolveLoader: {
@@ -20,10 +21,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
-            plugins: []
-          }
-        }
+            presets: ['@babel/preset-env'],
+            plugins: [],
+          },
+        },
       },
       {
         test: /\.(css|less)$/,
@@ -32,14 +33,15 @@ module.exports = {
           // 'css-loader',
           // 'less-loader'
           path.join(__dirname, 'loaders', 'style-loader.js'),
-          path.join(__dirname, 'loaders', 'less-loader.js')
-        ]
-      }
-    ]
+          path.join(__dirname, 'loaders', 'less-loader.js'),
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index6.html'),
     }),
-  ]
+    new ArchivePlugin(),
+  ],
 }
